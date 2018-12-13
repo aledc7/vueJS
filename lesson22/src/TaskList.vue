@@ -1,5 +1,5 @@
 <template>
-        <ul class="list-group tasks">
+        <ul class="list-group tasks-list">
             <app-task  v-for="(task, index) in tasks" :tasks="tasks" v-bind:key="task.id"
             :task="task" :index="index" @remove="deleteTask"></app-task>
         </ul>
@@ -24,3 +24,10 @@ export default {
     
 
 </script>
+
+<style>
+    .tasks-list {
+        margin-bottom: 40px;
+    }
+</style>
+

@@ -119,3 +119,28 @@ export default {
   } // fin metodos
 };
 </script>
+
+<style>
+    body {
+        margin: 10px;
+    }
+
+    .container {
+        max-width: 650px;
+    }
+
+    .container h2 {
+        margin-bottom: 20px;
+    }
+
+    
+    
+
+    .container footer {
+        margin: 40px 0;
+        padding-top: 20px;
+        border-top: 1px solid #ccc;
+        color: #999;
+    }
+</style>
+
