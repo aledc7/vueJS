@@ -8,6 +8,7 @@
     <app-task-list :tasks="tasks2"> </app-task-list>
 
     
+    
 
 
     <br>
@@ -25,20 +26,22 @@
 
 
 
-    <footer class="footer">
-      <p>&copy; 2019 Ingenea SRL</p>
-    </footer>
+   
+    <app-footer> </app-footer>
   </div>
 </template>
 
 <script>
-import TaskList from './TaskList.vue';
+import TaskList from './TaskList.vue'
 import TaskForm from './TaskForm.vue'
+import Footer from './Footer.vue'
 
 export default {
   components: {
     'app-task-list': TaskList,
-    'app-task-form': TaskForm
+    'app-task-form': TaskForm,
+    'app-footer': Footer
+
     
   },
   data() {
