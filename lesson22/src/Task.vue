@@ -46,7 +46,7 @@ export default {
             },
 
             // data será una función que retornará un false sobre las propiedades de edicion.
-            data: function() {
+            data(){
                 return {
                     editing: false,
                     draft: '',
@@ -60,23 +60,23 @@ export default {
             props: ['tasks','task', 'index'],
 
             //Dentro del componente app-task agregamos el método created y desde ahí escuchamos al evento editing:
-            created: function () {
+            created() {
                 // con $on escucho el evento de nombre editing, luego se ejecitará la funcion que haya adentro.
-                EventBus.$on('editing', function (index){
+                EventBus.$on('editing',(index) =>{
 
                     // si el indice es distinto del que estoy recibiendo, entonces ejecuto el metodo 'discard' que desactiva el modo edición.
                     if (this.index != index) {this.discard();}
 
                 // con esta linea enlazo la función con el componente.
-                }.bind(this));
+                });
             },
 
             methods: {
                 //  este método cambia el estado de las tareas de pendiente a realizada (la tacha).
-                toggleStatus: function () {
+                toggleStatus() {
                     this.task.pending = !this.task.pending;
                 },
-                edit: function () {
+                edit() {
                     // con $emit ('nombre_evento', 'donde_actúa') creo un manejador de eventos llamado ediing, y le paso a la funcion el índice como parámetro.
                     // entonces emitirá desde el lugar en donde se le indique.
                     EventBus.$emit('editing',this.index);
@@ -92,16 +92,16 @@ export default {
                     this.editing = true;
                 },
                  
-                update: function () {
+                update() {
                     this.task.description = this.draft;
 
                     this.editing = false;
 
                 },
-                discard: function () {
+                discard() {
                     this.editing = false;
                 },
-                remove: function () {
+                remove() {
                     // indice es donde empezará a borrar, el mumero siguiente es la cantidad de elementos a borrar.
                     // en este caso se borrará uno solito.
                    this.$emit('remove', this.index);

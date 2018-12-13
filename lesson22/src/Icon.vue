@@ -11,7 +11,7 @@ export default {
             props: ['img'],
             
             computed: {
-                cssClasses: function(){
+                cssClasses(){
                     // esta funcion concatena la clase con el valor de img.
                     return 'glyphicon glyphicon-' + this.img;
                 }

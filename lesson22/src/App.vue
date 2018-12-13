@@ -32,7 +32,7 @@ export default {
             components: {
                 'app-task': Task
                         },
-            data: function() {
+            data(){ //data: function()
               return {
                 errors: [],
                 new_task: null,
@@ -51,21 +51,31 @@ export default {
                 ]
             }},
             // aca le pongo in id a cada tarea
-            created: function(){
+            created(){//created: function()
+                this.tasks.forEach((task,index) => this.$set(task,'id',index + 1));
+
+                /* este codigo se reemplazo con 'arrow function'
                 this.tasks.forEach(function(task,index){
                     this.$set(task,'id',index +1);
                 }.bind(this));
+                */
             },
 
             methods: {
-                deleteCompleted: function () {
+                deleteCompleted(){//deleteCompleted: function ()
+
+                    this.tasks = this.tasks.filter(task => task.pending);
+
+                    /* modo viejo
                     this.tasks = this.tasks.filter(function (task) {
                         return task.pending;
                     })
 
+                    */
+
                 },
 
-                createTask: function () {
+                createTask(){ // createTask: function ()
                     this.errors = [];
                     if (!this.new_task) {
                         this.errors.push('Debe escribir el nombre de la Tarea');
@@ -79,7 +89,7 @@ export default {
                     }
                 },
 
-                deleteTask: function(index){
+                deleteTask(index){ //deleteTask: function(index)
                     this.tasks.splice(index, 1);
                 }
 

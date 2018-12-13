@@ -204,12 +204,12 @@ npm install
 
 Luego puedo compilar el proyecto  con este comando:
 ```
-sudo npm run build
+npm run build
 ```
 
 Una vez hecho el paso anterior para lanzar y ver la app, ejecuto este comando
 ```
-sudo npm run dev
+npm run dev
 ```
 
 #### WEBPACK
