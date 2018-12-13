@@ -3,7 +3,8 @@
         <h2>ABM DE TAREAS</h2>
 
         <ul class="list-group tasks">
-            <li is="app-task"  v-for="(task, index) in tasks" :tasks="tasks" :task="task" :index="index" @remove="deleteTask"></li>
+            <app-task  v-for="(task, index) in tasks" :tasks="tasks" v-bind:key="task.id"
+            :task="task" :index="index" @remove="deleteTask"></app-task>
         </ul>
 
         
@@ -49,6 +50,12 @@ export default {
                     }
                 ]
             }},
+            // aca le pongo in id a cada tarea
+            created: function(){
+                this.tasks.forEach(function(task,index){
+                    this.$set(task,'id',index +1);
+                }.bind(this));
+            },
 
             methods: {
                 deleteCompleted: function () {

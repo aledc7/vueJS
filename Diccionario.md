@@ -211,5 +211,8 @@ Una vez hecho el paso anterior para lanzar y ver la app, ejecuto este comando
 ```
 sudo npm run dev
 ```
-<>
+
+#### WEBPACK
+
+Se trata de un empaquetador de módulos, la definición de Webpack es bastante extensa.
 
