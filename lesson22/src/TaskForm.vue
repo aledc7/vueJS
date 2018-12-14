@@ -29,13 +29,15 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" >
 .new-task-form {
   display: flex;
-}
 
-.new-task-form input {
+  input {
   margin-right: 10px;
 }
+}
+
+
 </style>
 

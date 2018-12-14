@@ -114,42 +114,59 @@ export default {
 
 </script>
 
-<style>
+<style lang="scss">
     
 
     .task-list-item {
         display: flex;
         justify-content: space-between;
-    }
 
-    .task-list-item a {
+         a {
         text-decoration: none;
-    }
+         }
 
-    .task-list-item .editing {
-        box-shadow: inset 0 0 5px #999;
-    }
-
-    .task-list-item input, .task-list-item .description {
+        &.editing {
+            box-shadow: inset 0 0 5px #999;
+        }
+        input, .description {
         flex: 1;
         padding: 0 5px;
-    }
+        }
 
-    .task-list-item input {
+        input {
         border: 0;
-    }
 
-    .task-list-item input:focus {
-        outline: none;
-    }
+        &:focus {
+            outline: none;
+        }
+        }
 
-    .task-list-item.completed .description {
+        &.completed{
+        
+        .description {
         text-decoration: line-through;
+        }
+
+        &, a {
+            color: #999;
+        }
+
+
+
+        }
+
+
+        
     }
 
-    .task-list-item.completed, .task-list-item.completed a {
-        color: #999;
-    }
+   
+
+    
+
+    
+    
+
+    
 </style>
 
 

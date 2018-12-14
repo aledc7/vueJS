@@ -94,26 +94,30 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+
+    @import "./sass/app";
+
+  
     body {
         margin: 10px;
     }
 
     .container {
         max-width: 650px;
-    }
-
-    .container h2 {
+      
+    h2 {
         margin-bottom: 20px;
     }
 
-    
-    
-
-    .container footer {
+    footer {
         margin: 40px 0;
         padding-top: 20px;
         border-top: 1px solid #ccc;
         color: #999;
     }
+    
+    }
+
+    
 </style>
