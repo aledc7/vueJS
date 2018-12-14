@@ -1,28 +1,13 @@
 <template>
   <div id="app" class="container">
-    <h2>ABM DE TAREAS</h2>
-
-
     <app-task-list :tasks="tasks"> </app-task-list>
 
-    <app-task-list :tasks="tasks2"> </app-task-list>
-
-    
-    
-
-
+       
     <br>
     <button v-on:click="deleteCompleted" class="btn btn-primary">Borrar completadas</button>
-    <ul>
-      <li v-for="error in errors">{{ error }}</li>
-    </ul>
-
-<h4>Crear</h4>
+   
 
 <app-task-form @created="createTask"></app-task-form>
-
-<h4>Imprimir</h4>
-<app-task-form @created="alertTask"></app-task-form>
 
 
 
@@ -63,20 +48,6 @@ export default {
           pending: true
         }
       ],
-      tasks2: [
-        {
-          description: "Nuevo Array",
-          pending: true
-        },
-        {
-          description: "Probando Otra tarea",
-          pending: true
-        },
-        {
-          description: "Claro que si",
-          pending: true
-        }
-      ]
     };
   },
   // aca le pongo in id a cada tarea
@@ -146,4 +117,3 @@ export default {
         color: #999;
     }
 </style>
-

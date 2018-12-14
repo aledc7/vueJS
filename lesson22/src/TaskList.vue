@@ -1,8 +1,15 @@
 <template>
+
+            <div>
+
+                <h2 :class="{[$style.subtitle]: hasPendingTasks}">Tareas:</h2>
+
         <ul class="list-group tasks-list">
             <app-task  v-for="(task, index) in tasks" :tasks="tasks" v-bind:key="task.id"
             :task="task" :index="index" @remove="deleteTask"></app-task>
         </ul>
+
+        </div>
 </template>
 
 
@@ -17,17 +24,37 @@ export default {
     methods: {
         deleteTask(index){
                     this.tasks.splice(index, 1);
-                }
+                },
             
+        },
+    computed: {
+        hasPendingTasks(){
+            return this.tasks.some(task => task.pending);
         }
+    }
     }
     
 
 </script>
 
 <style>
+
+
+    
+
     .tasks-list {
         margin-bottom: 40px;
     }
 </style>
+
+
+
+<style module>
+
+.subtitle {
+            color: red;
+        }
+    
+</style>
+
 

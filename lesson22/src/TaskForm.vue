@@ -1,8 +1,12 @@
 <template>
+<div>
+    <h2 class="subtitle">Nueva Tarea:</h2>
   <form @submit.prevent="created" class="new-task-form">
     <input v-model="draft" type="text" class="form-control" placeholder="escriba una tarea">
     <button class="btn btn-primary">Crear tarea</button>
   </form>
+
+</div>
 </template>
 
 <script>
