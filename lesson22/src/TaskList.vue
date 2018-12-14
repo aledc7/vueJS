@@ -47,6 +47,23 @@ export default {
     }
 </style>
 
+<!--
+    Usa “Scopes”
+    Agregando el atributo scoped a la etiqueta style podemos definir estilos específicos para un componente,
+    es decir estos estilos serán aplicados solo al componente actual:
+    <style scoped>
+-->
+
+
+
+
+<!--
+    Usa CSS Modules
+    Otra forma de evitar colisiones entre estilos es usar CSS Modules.
+    Para usar CSS Modules añadimos el atributo module a la etiqueta style:
+    <style module>
+-->
+
 
 
 <style module>
