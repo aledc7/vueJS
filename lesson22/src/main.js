@@ -1,6 +1,9 @@
 // este es el archivo principal
 import Vue from 'vue'
-import App from './App.vue'
+import EventBus from 'event-bus.js'
+import App from './components/App.vue'
+
+window.EventBus = EventBus;
 
 var vm = new Vue({
   el: '#app',

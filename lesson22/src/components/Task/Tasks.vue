@@ -1,31 +1,23 @@
 <template>
-  <div id="app" class="container">
+<div>
     <app-task-list :tasks="tasks"> </app-task-list>
-
-       
-    <br>
     <button v-on:click="deleteCompleted" class="btn btn-primary">Borrar completadas</button>
-   
+    <app-task-form @created="createTask"></app-task-form>
+</div>
 
-<app-task-form @created="createTask"></app-task-form>
-
-
-
-   
-    <app-footer> </app-footer>
-  </div>
 </template>
 
 <script>
-import TaskList from './TaskList.vue'
-import TaskForm from './TaskForm.vue'
-import Footer from './Footer.vue'
+
+import TaskList from './List.vue'
+import TaskForm from './CreateForm.vue'
 
 export default {
+    
   components: {
     'app-task-list': TaskList,
     'app-task-form': TaskForm,
-    'app-footer': Footer
+    //'app-footer': Footer
 
     
   },
@@ -91,33 +83,6 @@ export default {
     //    document.write(arr);
     // Output: 1,2,77,78,5,6
   } // fin metodos
-};
+}
 </script>
 
-<style lang="scss">
-
-    @import "./sass/app";
-
-  
-    body {
-        margin: 10px;
-    }
-
-    .container {
-        max-width: 650px;
-      
-    h2 {
-        margin-bottom: 20px;
-    }
-
-    footer {
-        margin: 40px 0;
-        padding-top: 20px;
-        border-top: 1px solid #ccc;
-        color: #999;
-    }
-    
-    }
-
-    
-</style>

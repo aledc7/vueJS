@@ -17,7 +17,7 @@
 
 
 <script>
-import Task from "./Task.vue";
+import Task from "./ListItem.vue";
 
 export default {
   components: {
@@ -63,7 +63,7 @@ export default {
 
 <style lang="scss" module>
 
-    @import "sass/variables";
+   // @import "sass/variables";
 
     .subtitle {
     color: red;
