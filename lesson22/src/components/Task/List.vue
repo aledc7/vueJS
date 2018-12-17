@@ -3,25 +3,25 @@
     <h2 :class="{[$style.subtitle]: hasPendingTasks}">Tareas:</h2>
 
     <ul class="list-group tasks-list">
-      <app-task
+      <list-item
         v-for="(task, index) in tasks"
         :tasks="tasks"
         v-bind:key="task.id"
         :task="task"
         :index="index"
         @remove="deleteTask"
-      ></app-task>
+      ></list-item>
     </ul>
   </div>
 </template>
 
 
 <script>
-import Task from "./ListItem.vue";
+import ListItem from "./ListItem.vue";
 
 export default {
   components: {
-    "app-task": Task
+    "list-item": ListItem
   },
   props: ["tasks"],
   methods: {
