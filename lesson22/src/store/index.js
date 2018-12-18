@@ -1,27 +1,30 @@
-let tasks = 
-    [
-        {
-          description: "Primer Tarea",
-          pending: true
-        },
-        {
-          description: "Segunda Tarea",
-          pending: true
-        },
-        {
-          description: "Tercer Tarea",
-          pending: true
-        }
-      ];
-
-      tasks.tasks.forEach((task, index) => {
-          task.id = index + 1;
-      });
-    
+let tasks = [
   
+    {
+      title: "Primer Tarea",
+      pending: true,
+    },
+    {
+      title: "Segunda Tarea",
+      pending: true,
+    },
+    {
+      title: "Tercer Tarea",
+      pending: true,
+    }
+  
+];
+
+tasks.forEach((task, index) => {
+  task.description = ' Lorem ipsun';
+  task.id = index + 1;
+});
 
 export default {
-    state: {
-        tasks
-    }
+  state: {
+    tasks
+  },
+  findTask(id){
+    return this.state.tasks.find(task => task.id == id)
+  }  
 };

@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import store from 'store'
 import TaskList from './List.vue'
 import TaskForm from './CreateForm.vue'
 
@@ -27,27 +28,11 @@ export default {
       this.tasks = this.tasks.filter(task => task.pending);
     }
   },
-  created() {
-    this.tasks.forEach((task, index) => this.$set(task, "id", index + 1));
-  },
   data() {
     return {
-      new_task: null,
-      tasks: [
-        {
-          description: "Primer Tarea",
-          pending: true
-        },
-        {
-          description: "Segunda Tarea",
-          pending: true
-        },
-        {
-          description: "Tercer Tarea",
-          pending: true
-        }
-      ],
-    };
+      new_task: '',
+      tasks: store.state.tasks
+    }
   }
 }
 </script>
