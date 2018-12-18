@@ -37,7 +37,7 @@ Lo que está entre llaves dobles se lo denomina interpolacion
 
 
 
-#### v-for
+### v-for
 Ejemplo de uso de un for en vue
 
 
@@ -65,54 +65,55 @@ myObject = new Vue({
 ```
 
 
-#### $data 
+### $data 
 Es una variable especial de Vue.js y con ella podemos examinar nuestra propiedad data de nuestro objeto VM.
 
 #  Directivas
 
-#### v-bind
+### v-bind
 > Con esta directiva podremos vincular un atributo html a un valor que tenemos en nuestro modelo. Recibe como parámetro el atributo. De esta manera podríamos, por ejemplo, asignar el atributo disabled condicionalmente a un botón., ejemplo:
 ```javascript
 <button v-bind:disabled="my_variable">Enviar</button>
 ```
 
-#### v-bind:class
+### v-bind:class
 Es una clase dinámica...
 
 
 > De no usarse esta directiva, se asignaría el valor de cadena de texto que haya en la variable que estamos pasando como parámetro.
 > NOTA: es posible abreviar completamente la directiva v-bind dejando unicamente los dos puntos :
 
-#### v-once
+### v-once
 > Esta directiva no necesita ningún argumento, sirve para hacecr estatico el valor en donde se declare.
 > Este valor no cambiará asi se asigne otro valor a la varible.
 
-#### v-text
+### v-text
 > Esta directiva recibe una variable o texto que se imprimira en donde la estemos usando.  Para que imprima una variable se le pasa entre comillas dobles el nombre de la "variable" Esta variable será una propiedad del objeto vm. En caso de que se quiera pasar directamente el texto se puede hacer usando comillas simples dentro de las comillas dobles "'texto dentro de comillas simples'".
-#### v-html
+### v-html
 
 > Para proteccion vue deshabilitará cualquier etiqueta html que se pase dentro de una variable.  En ciertos casos puede que sea necesasrio evitar este comportamiento.  Utilizando v-html se evita este comportamienmto y las etiquetas html se comportaran como tal en lugar de comportarse como texto comun.
 
-#### v-if
+### v-if
 ```javascript
 v-if="vue.exp"
 ```
 > Con la directiva v-if puedo evaluar si el miembro del objeto en este caso vue.exp es verdadero (tiene datos)  en caso de que si lo tenga procederá con la sentencia. No así si es null, igual a un if comun en php.
 
-#### v-else-if
+### v-else-if
 > Para usar luego del primer v-if
-#### v-else
+### v-else
 > Para usar en la última opción del if.
 
 > NOTA: la directiva v-if no oculta el código sino que directamente lo elimina del DOM,  en caso de querer solamente ocultarlo y mostrarlo se deberá usar la directiva v-show que veremos a continuación
 
 
-#### v-show
-> Esta directiva no elimina los elementos, sino que los muestra u oculta utilizando un display:none o display:block.   Tener en cuenta que esta directiva no es compatible con la etiqueta <template>.  
-> NOTA: según la documentación, v-show será mas rápido para mostrar u ocultar elementos que v-if y v-else.
+### v-show
+> Esta directiva no elimina los elementos, sino que los muestra u oculta utilizando un display:none o display:block.   
+> Tener en cuenta que esta directiva no es compatible con la etiqueta <template>.  
+> NOTA: según la documentación, v-show será mas rápido para mostrar u ocultar elementos que v-if y v-else.   
 > 
 
-#### v-on
+### v-on
 > Con esta directiva podremos escuchar un evento, ya sea nativo, o creado por nosotros. Por ejemplo podríamos estar atentos a que se haga click en un botón para lanzar una acción en nuestro modelo.
 ```javascript
 <button v-on:click="mi_funcion">Enviar</button>
@@ -125,7 +126,7 @@ v-if="vue.exp"
 
 
 
-#### template
+### template
 
 > En Vue es posible incluír los asi llamados 'template' que no es otra cosa que código HTML que usaremos como plantilla. si el código es pequeño se escribe en la misma linea:
 
@@ -148,7 +149,7 @@ template: '#task-template'
 
 
 
-#### $emit
+### $emit
 > El método $emit puede usarse como evento personalizado, para emitir un evento cuando algo suceda en la función en donde se lo declare, de esta manera una alerta será disparada para los componentes que esten escuchando este evento, ahora veremos como se escucha un evento emitido por este metodo $emit.
 > 
 > Para poder usar este metodo, primero debo instanciar un objeto de Vue, aquí un ejemplo completo.
@@ -213,11 +214,11 @@ Una vez hecho el paso anterior para lanzar y ver la app, ejecuto este comando
 npm run dev
 ```
 
-#### WEBPACK
+### WEBPACK
 
 Se trata de un empaquetador de módulos, la definición de Webpack es bastante extensa.
 
-#### Definiendo Alias
+### Definiendo Alias
 
 
 Definiendo alias para las rutas:
