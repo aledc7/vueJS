@@ -177,16 +177,16 @@ Prerequisitos: tener Node instalado, y NPM.
 
 Instalando el cliente:
 
-```
+```javascript
 npm install vue-cli -g
 ```
 
 Crear un proyecto con una plantilla en blanco:
-```
+```javascript
 vue init simple nombre-del-proyecto
 ```
 Crear un proyecto con una plantilla webpack-simple. Esta plantilla utilizará webpack y una serie de modulos de webpack como vue-loader, el cuál nos va a permitir utilizar componentes de Vue en un solo archivo (Single File Components):
-```
+```javascript
 vue init webpack-simple nombre_proyecto
 ```
 
@@ -197,22 +197,101 @@ vue init webpack-simple nombre_proyecto
 - El archivo .gitignore nos permite indicarle a git qué archivos queremos ignorar.
 
 Luego es necesario correr dentro del directorio del proyecto este comando para instalar las dependencias del proyecto
-```
+```javascript
 npm install
 ```
 
 
 Luego puedo compilar el proyecto  con este comando:
-```
+```javascript
 npm run build
 ```
 
 Una vez hecho el paso anterior para lanzar y ver la app, ejecuto este comando
-```
+```javascript
 npm run dev
 ```
 
 #### WEBPACK
 
 Se trata de un empaquetador de módulos, la definición de Webpack es bastante extensa.
+
+#### Definiendo Alias
+
+
+Definiendo alias para las rutas:
+
+```javascript
+resolve: {
+    alias: {
+        'src': path.join(__dirname, 'src'),
+        'components': path.join(__dirname, 'src/components'),
+    }
+},
+```
+
+Agregando el directorio src al array de módulos:
+
+```javascript
+resolve: {
+    modules: [path.resolve(__dirname, "src"), "node_modules"],
+},
+```
+
+
+```javascript
+import EventBus from 'event-bus.js'
+ 
+windows.EventBus = EventBus
+```
+____________________________________________________________________________________________________
+# Creando una OnePage con el plugin VueRouter
+```javascript
+npm install vue-router
+```
+una vez instalado el plugin debe ser importado, como cualquier otro plugin
+```javascript
+import Router from 'vue-router'
+```
+
+También es necesario indicar que se va a usar el plugin de esta manera
+```javascript
+Vue.use(Router)
+```
+
+Las rutas se especifican en un array y cada ruta será un objeto con al menos las siguientes propiedades:
+
+__path:__ indica a donde apunta la ruta, como por ejemplo /about-us
+__component:__ indica el componente asociado a la ruta, representado por un objeto, como por ejemplo AboutUsPage.
+
+```javascript
+var router = new Router ({
+  routes: [
+      {
+        path: '/',
+        component: Dashboard
+      },
+      {
+        path: '/tasks',
+        component: Tasks
+      }
+  ]
+});
+```
+
+Luego también es necesario incluír el objeto router dento del objeto VM
+```javascript
+var vm = new Vue({
+  el: '#app',
+  router,
+  render: h => h(App)
+})
+```
+
+Por último solo resta agregar esta etiqueta al componente principal:
+
+```javascript
+<router-link to="/">Inicio</router-link>
+<router-link to="tasks">Tareas</router-link>
+```
 
