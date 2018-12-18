@@ -14,7 +14,7 @@ Cabe mencionar que es necesario definir las prpioedades que se vayan a utilizar,
 ```
 
 ### {{}}
-lo que está entre llaves dobles se lo denomina interpolacion
+Lo que está entre llaves dobles se lo denomina interpolacion
 
 
 ### Instancia basica de un vue
@@ -38,7 +38,7 @@ lo que está entre llaves dobles se lo denomina interpolacion
 
 
 #### v-for
-ejemplo de uso de un for en vue
+Ejemplo de uso de un for en vue
 
 
 ```javascript
@@ -77,7 +77,7 @@ Con esta directiva podremos vincular un atributo html a un valor que tenemos en 
 ```
 
 #### v-bind:class
-es una clase dinámica...
+Es una clase dinámica...
 
 
 De no usarse esta directiva, se asignaría el valor de cadena de texto que haya en la variable que estamos pasando como parámetro.
@@ -97,12 +97,12 @@ Para proteccion vue deshabilitará cualquier etiqueta html que se pase dentro de
 ```javascript
 v-if="vue.exp"
 ```
-con la directiva v-if puedo evaluar si el miembro del objeto en este caso vue.exp es verdadero (tiene datos)  en caso de que si lo tenga procederá con la sentencia. No así si es null, igual a un if comun en php.
+Con la directiva v-if puedo evaluar si el miembro del objeto en este caso vue.exp es verdadero (tiene datos)  en caso de que si lo tenga procederá con la sentencia. No así si es null, igual a un if comun en php.
 
 #### v-else-if
-para usar luego del primer v-if
+Para usar luego del primer v-if
 #### v-else
-para usar en la última opción del if.
+Para usar en la última opción del if.
 
 NOTA: la directiva v-if no oculta el código sino que directamente lo elimina del DOM,  en caso de querer solamente ocultarlo y mostrarlo se deberá usar la directiva v-show que veremos a continuación
 
@@ -116,7 +116,7 @@ Con esta directiva podremos escuchar un evento, ya sea nativo, o creado por noso
 ```javascript
 <button v-on:click="mi_funcion">Enviar</button>
 ```
-la directiva v-on puede ser resumida poniendo simplemente la arroba @   quedando la linea de arriba asi:
+La directiva v-on puede ser resumida poniendo simplemente la arroba @   quedando la linea de arriba asi:
 
 ```javascript
 <button @click="mi_funcion">Enviar</button>
@@ -153,7 +153,7 @@ El método $emit puede usarse como evento personalizado, para emitir un evento c
 Para poder usar este metodo, primero debo instanciar un objeto de Vue, aquí un ejemplo completo.
 
 
-este metodo recibe primero el nombre, y luego el argumento
+Este metodo recibe primero el nombre, y luego el argumento
 
 ```javascript
 var EventBus = new Vue;
@@ -249,7 +249,7 @@ ________________________________________________________________________________
 ```javascript
 npm install vue-router
 ```
-una vez instalado el plugin debe ser importado, como cualquier otro plugin
+Una vez instalado el plugin debe ser importado, como cualquier otro plugin
 ```javascript
 import Router from 'vue-router'
 ```
