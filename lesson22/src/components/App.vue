@@ -1,24 +1,22 @@
 <template>
   <div id="app" class="container">
-    
-    
-    
-    <app-tasks></app-tasks>
+      <h1>INGENEA SRL</h1>
 
+      <router-link to="/">Dashboard</router-link>
+      <router-link to="/Tasks">Tareas</router-link>
 
-   
-    <!-- <app-footer> </app-footer> -->
+        <keep-alive>
+            <router-view></router-view>
+        </keep-alive>
+
+      <footer class="footer">
+          <p>&copy; 2019 IngeneaSRL</p>
+      </footer>
   </div>
 </template>
 
 <script>
-import Tasks from "components/Task/Tasks.vue"
-//import Footer from './Footer.vue'
-
 export default {
-  components: {
-    'app-tasks': Tasks
-  }
 };
 </script>
 
