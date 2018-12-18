@@ -108,10 +108,9 @@ v-if="vue.exp"
 
 
 ### v-show
-> Esta directiva no elimina los elementos, sino que los muestra u oculta utilizando un display:none o display:block.   
+> Esta directiva no elimina los elementos, sino que los muestra u oculta utilizando un display:none o display:block.  
 > Tener en cuenta que esta directiva no es compatible con la etiqueta <template>.  
-> NOTA: según la documentación, v-show será mas rápido para mostrar u ocultar elementos que v-if y v-else.   
-> 
+> NOTA: según la documentación, v-show será mas rápido para mostrar u ocultar elementos que v-if y v-else.  
 
 ### v-on
 > Con esta directiva podremos escuchar un evento, ya sea nativo, o creado por nosotros. Por ejemplo podríamos estar atentos a que se haga click en un botón para lanzar una acción en nuestro modelo.
