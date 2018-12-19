@@ -28,8 +28,11 @@ export default {
             },
             methods: {
                 select(){
-                    this.$router.push(
-                        this.isActive ? '/tasks' : '/tasks/'+this.task.id);
+                    let route = this.isActive
+                    ? {name: 'tasks'}
+                    : {name: 'tasks.details', params: {id: this.task.id}};
+
+                    this.$router.push(route);
                 },
                 toggleStatus() {
                     this.task.pending = !this.task.pending;

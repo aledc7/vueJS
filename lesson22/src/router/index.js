@@ -19,14 +19,16 @@ var router = new Router ({
   routes: [
       {
         path: '/',
+        name: 'dashboard',
         component: Dashboard
       },
       {
-        path: '/tasks',
+        path: '/mis-tareas',
         component: Tasks,
         children: [
           {
             path:'',
+            name: 'tasks',
             component:{
               template: '<h2>Por favor selecciona una tarea</h2>'
             }
@@ -34,6 +36,7 @@ var router = new Router ({
           },
           {
             path: ':id',
+            name: 'tasks.details',
             component: TaskDetails,
             props: true
           }

@@ -4,12 +4,12 @@
 
 
     <ul class="nav nav-tabs" >
-      <router-link tag="li" to="/" active-class="active" exact><a>Dashboard</a></router-link>
-      <router-link tag="li" to="/Tasks" active-class="active" exact><a>Tareas</a></router-link>
+      <router-link tag="li" :to="{name: 'dashboard'}" active-class="active" exact><a>Dashboard</a></router-link>
+      <router-link tag="li" :to="{name: 'tasks'}" active-class="active" exact><a>Tareas</a></router-link>
     </ul>
-        <keep-alive>
+      
             <router-view></router-view>
-        </keep-alive>
+      
 
       <footer class="footer">
           <p>&copy; 2019 IngeneaSRL</p>
