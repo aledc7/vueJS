@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Tasks from 'components/Task/Tasks.vue'
+import TaskList from 'components/Task/List.vue'
+import TaskCreate from 'components/Task/Create.vue'
 import Dashboard from 'components/Dashboard.vue'
 import TaskDetails from 'components/Task/Details.vue'
 import ErrorNotFound from 'components/errors/NotFound.vue'
@@ -28,7 +29,7 @@ mode: 'history',
       },
       {
         path: '/mis-tareas',
-        component: Tasks,
+        component: TaskList,
         children: [
           {
             path:'',
@@ -43,6 +44,12 @@ mode: 'history',
             name: 'tasks.details',
             component: TaskDetails,
             props: true
+          },
+          {
+            path: 'create',
+            name: 'tasks.create',
+            component: TaskCreate
+
           }
         ]
       },

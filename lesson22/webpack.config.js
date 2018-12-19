@@ -72,7 +72,10 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin("style.css"),
+    new ExtractTextPlugin({
+      filename: "style.css",
+      disable: !inProduction
+    }),
     new ExtractTextPlugin('[name].[contenthash].css'),
     // Make sure this is after ExtractTextPlugin!
     new PurifyCSSPlugin({

@@ -1,73 +1,74 @@
 <template>
-  <div>
-    <h2 :class="{[$style.subtitle]: hasPendingTasks}">Tareas:</h2>
+<div class="row">
+    <div class="col-xs-6 col-md-6">
 
-    <ul class="list-group tasks-list">
-      <list-item
-        v-for="(task, index) in tasks"
-        :tasks="tasks"
-        v-bind:key="task.id"
-        :task="task"
-        :index="index"
-        @remove="deleteTask"
-      ></list-item>
+      <div class="top">
+        <h2>Tareas</h2>
+        <router-link :to="{name: 'tasks.create'}" >Nueva tarea</router-link>
+      </div>
+
+
+
+      <ul class="list-group tasks-list">
+      <list-item v-for="(task, index) in tasks" :key="task.id" :task="task"></list-item>
+    
+
+
     </ul>
-  </div>
+      <button v-on:click="deleteCompleted" class="btn btn-primary">Borrar completadas</button>
+    </div>
+
+    
+    <div class="col-xs-6 col-md-6">
+      <router-view></router-view>
+    </div>
+
+
+</div>
+
 </template>
 
-
 <script>
+import store from 'store'
+//import TaskForm from './CreateForm.vue'
 import ListItem from "./ListItem.vue";
-
 export default {
   components: {
+    //'task-form': TaskForm,
     "list-item": ListItem
   },
-  props: ["tasks"],
   methods: {
-    deleteTask(index) {
-      this.tasks.splice(index, 1);
+    createTask(task){
+      this.tasks.push(task);
+    },
+    deleteCompleted() {
+      this.tasks = this.tasks.filter(task => task.pending);
     }
   },
-  computed: {
-    hasPendingTasks() {
-      return this.tasks.some(task => task.pending);
+  data() {
+    return {
+      new_task: '',
+      tasks: store.state.tasks
     }
   }
-};
+}
 </script>
 
-
 <style lang="scss">
+
+h2 {
+  color: red !important;
+}
+
+.top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
 .tasks-list {
   margin-bottom: 40px;
 }
-</style>
-
-<!--
-    Usa “Scopes”
-    Agregando el atributo scoped a la etiqueta style podemos definir estilos específicos para un componente,
-    es decir estos estilos serán aplicados solo al componente actual:
-    <style scoped>
--->
-
-
-<!--
-    Usa CSS Modules
-    Otra forma de evitar colisiones entre estilos es usar CSS Modules.
-    Para usar CSS Modules añadimos el atributo module a la etiqueta style:
-    <style module>
--->
-
-
-
-<style lang="scss" module>
-
-   // @import "sass/variables";
-
-    .subtitle {
-    color: red;
-    }
 </style>
 
 
