@@ -11,10 +11,14 @@ import ErrorNotFound from 'components/errors/NotFound.vue'
 
 Vue.use(Router)
 
-var router = new Router ({
+const router = new Router ({
 
 // cada ruta de este array recibe el la ruta a la que se hará referencia en la url
 // y luego el componente al que debe redirigir cuando se indique esa ruta.
+
+
+// el modo history de html5 permite eliminar el hashtag # de la url
+mode: 'history',
 
   routes: [
       {
