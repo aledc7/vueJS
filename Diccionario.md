@@ -289,10 +289,19 @@ var vm = new Vue({
 })
 ```
 
-Por último solo resta agregar esta etiqueta al componente principal:
+Por último solo resta agregar esta etiqueta al componente principal.
+
+### <router-link>
+La etiqueta router link es similar al a-href del html, sirve para redireccioar a otra web.
+
 
 ```javascript
 <router-link to="/">Inicio</router-link>
 <router-link to="tasks">Tareas</router-link>
+```
+
+En caso de que se quiera dejar de hacer uso del hashtag # en la url, hay que setear el modo history dentro del router, justo antes de definir el array con las rutas:
+```js
+mode: 'history'
 ```
 
