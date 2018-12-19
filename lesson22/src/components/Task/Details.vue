@@ -1,9 +1,9 @@
 <template>
-    <div>
-        <h2> {{ task.title }} </h2>
-        <p> {{ task.description }} </p>
-
+    <div v-if="task">
+            <h2>{{ task.title }}</h2>
+            <p>{{ task.description }}</p>
     </div>
+    
 </template>
 
 <script>
@@ -24,7 +24,10 @@ export default {
     methods: {
         findTask() {
             this.task = store.findTask(this.id);
+
+            not_found_unless(this.task);
         }
+
     }
 
 }
