@@ -1,8 +1,17 @@
 <template>
-<div>
-    <task-list :tasks="tasks"> </task-list>
-    <button v-on:click="deleteCompleted" class="btn btn-primary">Borrar completadas</button>
-    <task-form @created="createTask"></task-form>
+<div class="row">
+    <div class="col-xs-6 col-md-6">
+      <task-list :tasks="tasks"> </task-list>
+      <button v-on:click="deleteCompleted" class="btn btn-primary">Borrar completadas</button>
+    </div>
+
+    
+    <div class="col-xs-6 col-md-6">
+      <router-view></router-view>
+    </div>
+
+    <!-- <task-form @created="createTask"></task-form> -->
+
 </div>
 
 </template>

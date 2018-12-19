@@ -32,7 +32,7 @@ export default {
     }
 
     .container {
-        max-width: 650px;
+        max-width: 920px;
       
     h2 {
         margin-bottom: 20px;

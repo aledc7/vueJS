@@ -23,13 +23,23 @@ var router = new Router ({
       },
       {
         path: '/tasks',
-        component: Tasks
+        component: Tasks,
+        children: [
+          {
+            path:'',
+            component:{
+              template: '<h2>Por favor selecciona una tarea</h2>'
+            }
+
+          },
+          {
+            path: ':id',
+            component: TaskDetails,
+            props: true
+          }
+        ]
       },
-      {
-        path: '/tasks/:id',
-        component: TaskDetails,
-        props: true
-      },
+      
       {
         path: '/404',
         component: ErrorNotFound
