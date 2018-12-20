@@ -30,5 +30,15 @@ export default {
   createTask(task){
     task.id = this.state.tasks.length + 1;
     this.state.tasks.push(task);
-  }  
+  },
+  toggleTask(task){
+    task.pending = !task.pending;
+  },
+  deleteTask(id){
+    // aca obtengo el indice que quiero eliminar
+    let index = this.state.tasks.findIndex(task => task.id == id);
+
+    // aca borro la tarea con el indice indicado
+    this.state.tasks.splice(index,1);
+  }
 };

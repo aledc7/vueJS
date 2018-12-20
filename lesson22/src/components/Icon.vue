@@ -1,6 +1,8 @@
 <template>
    <!-- uso el siguiente template -->
+   <div>
     <span v-bind:class="cssClasses" aria-hidden="true"></span>
+    </div>
 </template>
 
 

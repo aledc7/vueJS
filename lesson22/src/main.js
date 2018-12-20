@@ -18,6 +18,8 @@ window.not_found_unless = function (condition){
   }
 }
 
+Vue.component('app-icon', require('./components/Icon.vue').default);
+
 
 
 var vm = new Vue({

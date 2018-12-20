@@ -9,12 +9,9 @@
 </template>
 
 <script>
+import store from 'store';
 
-import Icon from 'components/Icon.vue'
 export default {
-            components: {
-                'app-icon': Icon
-            },
             data(){
                 return {
                     draft: '',
@@ -35,7 +32,7 @@ export default {
                     this.$router.push(route);
                 },
                 toggleStatus() {
-                    this.task.pending = !this.task.pending;
+                    store.toggleTask(this.task);
                 }
                 
             }
@@ -67,7 +64,7 @@ export default {
                 color: #999;
             }
         }
-        &.active a {
+        &.active a, &active {
             color: white;
         }
   
