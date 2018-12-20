@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import TaskList from 'components/Task/List.vue'
+import TaskEdit from 'components/Task/Edit.vue'
 import TaskCreate from 'components/Task/Create.vue'
 import Dashboard from 'components/Dashboard.vue'
 import TaskDetails from 'components/Task/Details.vue'
@@ -28,7 +29,7 @@ mode: 'history',
         component: Dashboard
       },
       {
-        path: '/mis-tareas',
+        path: '/tasks',
         component: TaskList,
         children: [
           {
@@ -37,7 +38,6 @@ mode: 'history',
             component:{
               template: '<h2>Por favor selecciona una tarea</h2>'
             }
-
           },
           {
             path: ':id',
@@ -49,7 +49,12 @@ mode: 'history',
             path: 'create',
             name: 'tasks.create',
             component: TaskCreate
-
+          },
+          {
+            path: ':id/edit',
+            name:'tasks.edit',
+            component: TaskEdit,
+            props: true
           }
         ]
       },
