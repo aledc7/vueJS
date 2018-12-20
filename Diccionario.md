@@ -305,3 +305,7 @@ En caso de que se quiera dejar de hacer uso del hashtag # en la url, hay que set
 mode: 'history'
 ```
 
+### Render Functions
+
+Las Render Functions no son más que funciones de JavaScript que retornar algo llamado DOM Virtual, que no es más que un objeto de JavaScript que Vue.js utiliza para representar una plantilla y finalmente procesar e imprimir los elementos actuales del DOM en el navegador.
+
