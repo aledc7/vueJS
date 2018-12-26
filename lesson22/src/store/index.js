@@ -15,9 +15,13 @@ new Vue ({
 export default {
   state,
   findTask(id){
-    return this.state.tasks.find(task => task.id == id)
+
+    let task = this.state.tasks.find(task => task.id == id)
+    not_found_unless(task);
+    return task;
+
   },
-  createTask( title, description ){
+  createTask( {title, description} ){
     let newTask = {
       id: this.state.tasks-length + 1,
       title,
