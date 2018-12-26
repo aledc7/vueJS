@@ -30,25 +30,18 @@
 
 <script>
 import store from 'store'
-//import TaskForm from './CreateForm.vue'
 import ListItem from "./ListItem.vue";
 export default {
+  computed: {
+    tasks: () => store.state.tasks
+  },
   components: {
-    //'task-form': TaskForm,
     "list-item": ListItem
   },
   methods: {
-    createTask(task){
-      this.tasks.push(task);
-    },
     deleteCompleted() {
-      this.tasks = this.tasks.filter(task => task.pending);
-    }
-  },
-  data() {
-    return {
-      new_task: '',
-      tasks: store.state.tasks
+      store.deleteCompletedTasks();
+      //this.tasks = this.tasks.filter(task => task.pending);
     }
   }
 }
