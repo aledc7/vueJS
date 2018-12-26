@@ -5,10 +5,11 @@
 
 
 <script>
+import store from '../store'
     export default{
         methods: {
             increment(){
-                this.$emit('increment')
+                store.commit('increment')
             }
         }
     }

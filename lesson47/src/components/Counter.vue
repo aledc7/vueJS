@@ -2,7 +2,7 @@
 
 <div>
     <h2>{{count}}</h2>
-    <increment @increment="increment"/>
+    <increment/>
     <decrement @decrement="decrement"/>
 </div>
 
@@ -10,6 +10,7 @@
 
 
 <script>
+import store from '../store'
 import Increment from './increment.vue'
 import Decrement from './decrement.vue'
 
@@ -18,17 +19,12 @@ export default {
         Increment,
         Decrement
     },
-    data(){
-        return{
-            count: 0
+    computed: {
+        count(){
+            return store.state.count
         }
     },
     methods: {
-        increment(){
-            this.count++
-
-           // this.$emit('update-counter')
-        },
         decrement(){
             this.count--
         }
