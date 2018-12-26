@@ -14,7 +14,8 @@ export default {
       props: {
         title: 'Editar tarea',
         action: 'Actualiz tarea',
-        task: this.task
+        
+        
       },
       on: {
         save: (draft) => {
