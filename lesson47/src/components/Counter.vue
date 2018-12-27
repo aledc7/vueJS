@@ -1,18 +1,19 @@
 <template>
 
 <div>
-    <h2>{{count}}</h2>
+    <h2> {{ msg}} {{tripleCounter}}</h2>
     <increment/>
-    <decrement @decrement="decrement"/>
+    <decrement/>
 </div>
 
 </template>
 
 
 <script>
-import store from '../store'
+import {mapGetters} from 'vuex'
 import Increment from './increment.vue'
 import Decrement from './decrement.vue'
+
 
 export default {
     components: {
@@ -20,16 +21,16 @@ export default {
         Decrement
     },
     computed: {
-        count(){
-            return store.state.count
+        ...mapGetters(['tripleCounter']),
+        msg() {
+            return 'Counter Value: '
         }
-    },
-    methods: {
-        decrement(){
-            this.count--
-        }
+    }
+        
+    
+    
     }
 
 
-}
+
 </script>

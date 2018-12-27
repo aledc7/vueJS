@@ -8,6 +8,9 @@ let store = new Vuex.Store({
     state: {
         count: 0
     },
+    getters: {
+        tripleCounter: (state) => state.count ** 4
+    },
     mutations: {
         increment (state){
             state.count++

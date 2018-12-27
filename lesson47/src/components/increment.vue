@@ -5,12 +5,8 @@
 
 
 <script>
-import store from '../store'
+import {mapMutations} from 'vuex'
     export default{
-        methods: {
-            increment(){
-                store.commit('increment')
-            }
-        }
+        methods: mapMutations (['increment'])
     }
 </script>

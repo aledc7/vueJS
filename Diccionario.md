@@ -309,3 +309,12 @@ mode: 'history'
 
 Las Render Functions no son más que funciones de JavaScript que retornar algo llamado DOM Virtual, que no es más que un objeto de JavaScript que Vue.js utiliza para representar una plantilla y finalmente procesar e imprimir los elementos actuales del DOM en el navegador.
 
+
+### Operador de propagacion de Objetos (objet spread operetor)
+El operador de propagación spread operator permite que una expresión sea expandida en situaciones donde se esperan múltiples argumentos (llamadas a funciones) o múltiples elementos (arrays literales).
+se utiliza con los tres puntos '...'
+
+```js
+...mapState(['count'])
+```
+
