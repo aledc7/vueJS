@@ -318,3 +318,23 @@ se utiliza con los tres puntos '...'
 ...mapState(['count'])
 ```
 
+### Arrow Function 
+
+Las Arrow Function es una nueca caracteristica de ES6, la cual permite simplificar el código.
+Basicamente en lugar de escribir 'function(){...acá el código}' se pone una flecha =>
+
+
+Ejemplo de una función convencional
+```js
+setTimeout(function() {
+  alert('me muestro pasado 1 segundo')
+}, 1000);
+```
+
+Ejemplo de la misma función con arrow function
+
+```js
+setTimeout(() =>  alert('me muestro pasado 1 segundo'), 1000);
+```
+
+
