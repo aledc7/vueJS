@@ -12,7 +12,7 @@ export default {
             },
             on: {
                save: (draft) => {
-                    store.dispatch('createTask', draft);
+                    console.log(store.dispatch('createTask', draft))
 
                     this.$router.push({
                         name: 'tasks',

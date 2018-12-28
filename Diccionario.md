@@ -338,3 +338,13 @@ setTimeout(() =>  alert('me muestro pasado 1 segundo'), 1000);
 ```
 
 
+### Vuex
+Vuex se trata de una implementación de Flux, un patrón de diseño para controlar el estado de nuestras aplicaciones.
+
+
+State: estado de la aplicación, es decir datos de nuestro “Store”
+Getters: similares a las computed properties, es decir de solo lectura
+Mutations: métodos sincrónicos para actualizar el State
+Actions: métodos asíncronos para realizar operaciones de AJAX, entre otras.
+
+
