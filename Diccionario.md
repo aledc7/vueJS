@@ -348,3 +348,24 @@ Mutations: métodos sincrónicos para actualizar el State
 Actions: métodos asíncronos para realizar operaciones de AJAX, entre otras.
 
 
+### Diferencia entre el Objeto "data" y el objwro "computed"
+
+Mientras que las propiedades dentro del objeto __Data__ seran estáticas, las propiedades dentro de __computed__ seran dinámicas.
+Es correcto entonces colocar dentro de las computed properties todas las propiedades que cambiaran.
+
+Otra diferencia es que las computed properties al ser dinámicas, siempre va a ser una función, que retornará un valor.
+Acá un ejemplo:
+```js
+var vm = new Vue({
+            el: "#app",
+            data:{
+                name: 'Ale DC2'
+            },
+            computed: {
+                invertir: function(){
+                    return this.name.split('').reverse().join('');
+                }
+            }
+        });
+```
+Observesé en el ejemplo de arriba, como la función de la computed está dentro del objeto __vm__ , para hacer referencia a __name__ hace uso del this.name
