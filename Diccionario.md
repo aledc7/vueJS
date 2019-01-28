@@ -75,6 +75,7 @@ Es una variable especial de Vue.js y con ella podemos examinar nuestra propiedad
 ```javascript
 <button v-bind:disabled="my_variable">Enviar</button>
 ```
+NOTA: La directiva __v-bind:__  tambien puede ser usada solo con los dos puntos __:__ y el resultado será el mismo. 
 
 ### v-bind:class
 Es una clase dinámica...
