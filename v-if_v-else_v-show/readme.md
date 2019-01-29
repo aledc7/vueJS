@@ -1,6 +1,6 @@
 ## Simple ejemplo de un archivo HTML que muestra u oculta un div dependiendo si el usuario acepta o no los Términos y Condiciones
 
-el código completo se encientra en esta misma carpeta con formato html
+el código completo se encientra en esta misma carpeta en el archivo __ejemplo_v-if.html__
 
 #### En este ejemlo se hace uso de:
 
