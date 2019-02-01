@@ -1,6 +1,6 @@
 ## Ejemplo de un archivo HTML que pone dinámicamente clases de bootstrap a lineas de texto, según la posición de un selector.
 
-El código completo se encientra en esta misma carpeta en el archivo __classDinamic.html__
+El código completo se encientra en esta misma carpeta en el archivo __classDinamic.html__  basta con descargarlo y estará funcionando.
 
 #### En este ejemlo se hace uso de:
 
