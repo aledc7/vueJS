@@ -39,11 +39,6 @@ recuerden que poner __v-bind:class__  es igual a poner solo los dos puntos   __:
         
             <div class="row h-100 justify-content-center align-items-center border border-primary">
                     <div class="input-group-text">
-                        <!-- <input type="radio" name="clasebootstrap">  Succcess <br>
-                        <input type="radio" name="clasebootstrap">  Info  <br>
-                        <input type="radio" name="clasebootstrap">  Warning  <br>
-                        <input type="radio" name="clasebootstrap">  Danger  <br> -->
-
                         <select v-model="vue.selected">
                             <option disabled value="">elija una clase</option>
                             <option>Success</option>
@@ -55,7 +50,6 @@ recuerden que poner __v-bind:class__  es igual a poner solo los dos puntos   __:
                     <br>
                     <br>
 
-                    <!-- <span>Seleccionado: {{ vue.selected }}</span> -->
 
                     <div class="container">
                             <div v-bind:class="{'alert alert-success' : vue.selected == 'Success'}">
