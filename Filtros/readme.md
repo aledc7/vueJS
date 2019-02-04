@@ -52,21 +52,6 @@ Los filtros se agregan mediante el caracter pipe |  seguido del nombre del filtr
             </div>  
 
 
-
-        <p>Texto 2:</p>
-            <div class="row h-100 justify-content-center align-items-center border border-success">
-            
-            
-            </div>
-
-
-        <p>Texto 3:</p>
-            <div class="row h-100 justify-content-center align-items-center border border-warning">
-  
-            
-            </div>
-
-
            </div> <!--fin main container -->
 
 
