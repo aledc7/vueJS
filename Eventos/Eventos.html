@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>AleDC - V-for</title>
+    <title>AleDC - Manejo de Eventos</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
 </head>
 <body>
-    <h1 class="text-center">V-for en Vue.js2</h1>
+    <h1 class="text-center">Manejo de Eventos</h1>
 
 
 
@@ -21,43 +21,48 @@
         <br>
         <br>
 
-        <p>Recorriendo un arrray con v-for:</p>
+        <p>LISTADO DE TAREAS:</p>
             <div class="row h-100 justify-content-center align-items-center border border-primary">
                     
-                
-                 <ul>    <!--se le pasa un alias, la palabar 'in' y el nombre del array -->
-                    <!-- luego se pone el alias en la interpolacion -->
-                    <li v-for="mi_lias in mi_array" >{{ mi_lias }}</li>
-                </ul>
-            </div>  
-            <br>
-            <br>
-
-
-        <p>Recorro el array y ahora imprimo también el índice:</p>
-            <div class="row h-100 justify-content-center align-items-center border border-success">
                     
-                
-                 <ul>    <!--se le pasa un alias, la palabar 'in' y el nombre del array -->
-                    <!-- luego se pone el alias en la interpolacion -->
-                    <li v-for="(mi_lias, indice) in mi_array" >{{indice + 1}} - {{ mi_lias }}</li>
-                </ul>
-            </div>
-            <br>
-            <br>
+                    <ul>    <!--se le pasa un alias, la palabar 'in' y el nombre del array -->
+                        <!-- luego se pone el alias en la interpolacion -->
+                        <li v-for="mi_lias in mi_array" >{{ mi_lias.Titulo }}</li>
+                    </ul>
 
-        <p>uso el v-for para repetir un < template ></p>
-            <div class="row h-100 justify-content-center align-items-center border border-warning">
-                <template v-for="(mi_lias, indice) in mi_array" >
-                    <p>{{indice + 1}} - {{ mi_lias.Titulo }} </p>
-                    <hr>
-                </template>    
-            </div>
 
+            </div>  
+
+
+
+        <p>Texto 2:</p>
+            <div class="row h-100 justify-content-center align-items-center border border-success">
             
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    
+                    <!-- enlazo este campo de texto a la propiedad tarea_nueva -->
+                    <input type="text" v-model="tarea_nueva" class="form-control" v-on:keyup.enter="crear_Tarea">
+                    
+                    <!-- cuando se haga click ejecuta el metodo crear_Tarea -->
+                    <!-- se puede usar todos los eventos disponibles en javascript -->
+                    <!-- recuerden que usar v-on se puede abreviar usando la arroba @ -->
+                    <button class="btn btn-primary" v-on:click="crear_Tarea" >Crear tarea</button>
+                    
+                    <br>
+                    <br>
+    
+            </div>
 
+
+        <p>Texto 3:</p>
+            <div class="row h-100 justify-content-center align-items-center border border-warning">
                 
-
+  
+            
+            </div>
 
 
            </div> <!--fin main container -->
@@ -88,7 +93,24 @@
                 {Titulo: 'Tercer Tarea',
                 pendiente: false
                 }
-            ]
+
+            ],
+            tarea_nueva:''
+        },
+        computed:
+        {
+            // acá van todas las propiedades dinámicas.
+        },
+        methods:
+        {
+            crear_Tarea: function(){
+                // meto en el array un nuevo elemento, capturado de tarea_nueva
+                this.mi_array.push({Titulo: this.tarea_nueva , pendiente: true});
+
+                // limpio el campo del formulario para que el usuario escriba de nuevo
+                this.tarea_nueva = '';
+            }
+
         }
     });
 
