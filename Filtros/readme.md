@@ -45,7 +45,7 @@ Los filtros se agregan mediante el caracter pipe |  seguido del nombre del filtr
                 <div class="welcome">
                     Bienvendo {{ nombre | filtro1 | filtro2 }}
                     
-                    <p>{{23390 | filtro_Money }}</p>
+                    <p>{{53390 | filtro_Money }}</p>
                 </div>
                 
 
