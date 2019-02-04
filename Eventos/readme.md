@@ -10,7 +10,7 @@ El código completo se encuentra en esta misma carpeta en el archivo __Eventos.h
 
 La directia __v-on__ ejecutará alguna acción cuando ocurra algun evento. Este evento se lo tenemos que indicar nosotros... por ejemplo, si queremos que cuando se haga click en un boton se ejecute un método, una posible forma sería la siguiente:
 ```js
-<button class="btn btn-primary" v-on:click="crear_Tarea" >Crear tarea</button>
+<button v-on:click="crear_Tarea" >Crear tarea</button>
 ```
 entonces cuando se le dé click en el boton, se ejecutará el método crear_Tarea.
 
