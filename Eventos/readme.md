@@ -22,6 +22,7 @@ NOTA: es posible abreviar la directiva __v-on__ con el signo de arroba **@** , d
 ```
 
 
+Aquí el código de un ejemplo completo que agrega tareas a una lista al darle click al boton o al presionar enter
 
 ```js
 <!DOCTYPE html>
