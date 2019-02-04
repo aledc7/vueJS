@@ -1,8 +1,8 @@
 ## Ejemplo de un archivo HTML que agrega tareas a una lista de Tareas
 
-El código completo se encientra en esta misma carpeta en el archivo __Eventos.html__  basta con descargarlo y estará funcionando.
+El código completo se encuentra en esta misma carpeta en el archivo __Eventos.html__  basta con descargarlo y estará funcionando.
 
-#### En este ejemlo se hace uso de:
+#### En este ejemplo se hace uso de:
 
 - v-on 
 - v-model  
@@ -10,18 +10,19 @@ El código completo se encientra en esta misma carpeta en el archivo __Eventos.h
 
 La directia __v-on__ ejecutará alguna acción cuando ocurra algun evento. Este evento se lo tenemos que indicar nosotros... por ejemplo, si queremos que cuando se haga click en un boton se ejecute un método, una posible forma sería la siguiente:
 ```js
-<button class="btn btn-primary" v-on:click="crear_Tarea" >Crear tarea</button>
+<button v-on:click="crear_Tarea" >Crear tarea</button>
 ```
 entonces cuando se le dé click en el boton, se ejecutará el método crear_Tarea.
 
 Este método debe estar en nuestro objeto VM, dentro de __methods__  como se verá en el ejemplo.
 
-NOTA: es posible abreviar la directiva __v-on__ con el signo de arroba __@__ , de esta manera la misma linea de arriba quedaría de esta manera:
+NOTA: es posible abreviar la directiva __v-on__ con el signo de arroba **@** , de esta manera la misma linea de arriba quedaría de esta manera:
 ```js
-<button class="btn btn-primary" @:click="crear_Tarea" >Crear tarea</button>
+<button @:click="crear_Tarea" >Crear tarea</button>
 ```
 
 
+Aquí el código de un ejemplo completo que agrega tareas a una lista al darle click al boton o al presionar enter
 
 ```js
 <!DOCTYPE html>
