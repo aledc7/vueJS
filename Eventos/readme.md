@@ -16,9 +16,9 @@ entonces cuando se le dé click en el boton, se ejecutará el método crear_Tare
 
 Este método debe estar en nuestro objeto VM, dentro de __methods__  como se verá en el ejemplo.
 
-NOTA: es posible abreviar la directiva __v-on__ con el signo de arroba __@__ , de esta manera la misma linea de arriba quedaría de esta manera:
+NOTA: es posible abreviar la directiva __v-on__ con el signo de arroba **@** , de esta manera la misma linea de arriba quedaría de esta manera:
 ```js
-<button class="btn btn-primary" @:click="crear_Tarea" >Crear tarea</button>
+<button @:click="crear_Tarea" >Crear tarea</button>
 ```
 
 
