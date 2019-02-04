@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>AleDC - Plantilla para Documentar</title>
+    <title>AleDC - Filtros</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 
 </head>
 <body>
-    <h1 class="text-center">Plantilla Para Documentar</h1>
+    <h1 class="text-center">Uso de Filtros en Vue.js</h1>
 
 
 
@@ -24,6 +24,11 @@
         <p>Texto 1:</p>
             <div class="row h-100 justify-content-center align-items-center border border-primary">
                     
+                <div class="welcome">
+                    Bienvendo {{ nombre | filtro1 | filtro2 }}
+                    
+                    <p>{{23390 | filtro_Money }}</p>
+                </div>
                 
 
             </div>  
@@ -52,6 +57,10 @@
     <!-- este es el CDN para que funcione Vue.js, tiene que ir antes del script de vue, en el final del body -->
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
 
+<!-- Este CDN pertenece a una libreria de Javascript para formatear numeros  ( http://numeraljs.com )  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+
+
 
 <!-- dentro de esta etiqueta script va todo el código de vue.js -->
 <script>
@@ -60,9 +69,9 @@
         // defino en donde tendrá accion mi objeto de vue, en este caso en el div que tenga la id 'app'
         el: "#app",
         // defino la propiedad data en donde deben estar todos los componentes con los que me encuentre trabajando.
-        data:
-        {
-            // aca va toda la data
+        data:{
+            nombre: 'Alejandro De Castro'
+
         },
         computed:
         {
@@ -71,6 +80,20 @@
         methods:
         {
             // acá van los métodos
+        },
+        filters:
+        {
+            // cada funcion debe recibir un argumento, que será el valor que esté antes del signo | dentro de la interpolacion
+            filtro1: function(nombre){
+                return nombre.toUpperCase();
+            },
+            filtro2: function(nombre){
+                return 'Ing. ' + nombre;
+            },
+            // creo un filtro usando la librería de Javascript
+            filtro_Money: function(nombre){
+                return numeral(nombre).format('0,0.0');
+            }
         }
     });
 
