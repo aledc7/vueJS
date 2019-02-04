@@ -136,7 +136,7 @@ NOTA: es posible abreviar la directiva __v-on__ con el signo de arroba __@__ , d
                 // limpio el campo del formulario para que el usuario escriba de nuevo
                 this.tarea_nueva = '';
             }
-
+ 
         }
     });
 
