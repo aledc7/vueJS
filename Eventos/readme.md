@@ -2,7 +2,7 @@
 
 El código completo se encuentra en esta misma carpeta en el archivo __Eventos.html__  basta con descargarlo y estará funcionando.
 
-#### En este ejemlo se hace uso de:
+#### En este ejemplo se hace uso de:
 
 - v-on 
 - v-model  
