@@ -1,6 +1,6 @@
-## Ejemplo de un archivo HTML que recorro un array de objetos usando v-for
+## Ejemplo de un archivo HTML que agrega tareas a una lista de Tareas
 
-El código completo se encientra en esta misma carpeta en el archivo __v-for.html__  basta con descargarlo y estará funcionando.
+El código completo se encientra en esta misma carpeta en el archivo __Eventos.html__  basta con descargarlo y estará funcionando.
 
 #### En este ejemlo se hace uso de:
 
