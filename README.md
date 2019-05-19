@@ -1,4 +1,4 @@
-# VueJS 2 - Comon Stuctures and Axios use.
+# VueJS 2 - Common Structures and Axios usage.
 [<img src="https://github.com/aledc7/PHP-Certification/blob/master/aledc-logo.png?raw=true">](https://aledc.com)
 
 - [x] Nivel Intermedate
