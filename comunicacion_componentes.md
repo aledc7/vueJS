@@ -26,7 +26,7 @@ En este caso tenemos como ejemplo un componente padre enviando información a un
 
 ```php
 
-# Este es el componente hijo, que exporta dos propiedades, por las cuales recibe la data del componente padre.
+# Componente hijo, que exporta dos propiedades, por las cuales recibe la data del componente padre.
 <template>
 
 # aca renderizo dinamicamente las propiedades que recibo desde el componente padre.  
@@ -53,6 +53,8 @@ export default {
 
 2. Luego en el componente Padre, debo primeramente importar el componente hijo, y luego incluirlo en el export default
 ```php
+# Componente Padre
+
 import childComponent from './ChildComponent.vue'
 
 export default{
@@ -60,8 +62,10 @@ export default{
     childComponent
   }    
 ````
-2.1 Luego, primeramente debo incluír la etiqueta del componente hijo en el template, para que aparezca, y despues bindear la propiedad que quiera enviar, con el elemento quie tenga los datos que quiero pasarle al componente hijo:
+2.1 Luego, primeramente debo incluír la etiqueta del componente hijo en el template, para que aparezca, y luego dentro de la etiqueta del compinente hijo, bindear la propiedad que quiera enviar, con el elemento en el componente padre que tenga los datos que quiero pasarle al componente hijo:
 ```php
+# Componente Padre
+
 <template>
 
     
