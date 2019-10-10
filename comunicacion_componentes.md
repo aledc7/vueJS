@@ -11,9 +11,73 @@ La Comunicación entre componentes en vuejs puede ser de varias maneras:
 
 Cuando es desde un componente Padre a un Componente hijo, se hace a traves de __propiedades__  
 
-PADRE -> PROPIEDAD -> HIJO
+PADRE -> __PROPIEDAD__ -> HIJO
 
 Cuando es desde un componente hijo hacia un componente padre, se hace a traves de __eventos__ 
 
-HIJO -> EVENTO -> PADRE
+HIJO __EVENTO__ -> PADRE
+
+
+En este caso tenemos como ejemplo un componente padre enviando información a un componente hijo:
+
+
+1. Primeramente, en el componente __hijo__ se deberá exportar la propiedad que se quiera recibir del padre, eto se hace siempre con en nombre __props:__   
+
+
+```php
+
+# Este es el componente hijo, que exporta dos propiedades, por las cuales recibe la data del componente padre.
+<template>
+
+# aca renderizo dinamicamente las propiedades que recibo desde el componente padre.  
+<div>
+  <p>{{nombre}}</p>
+  <p>{{email}}</p>  
+</div>
+
+
+</template>
+
+<script>
+import LocalComponent from './LocalComponent.vue'
+
+export default {
+# aca le paso un array con todas las propiedades que quiera recibir del componente padre.
+  props: ["nombre_prop", "email_prop" ]
+}
+</script>
+
+
+````
+
+
+2. Luego en el componente Padre, debo primeramente importar el componente hijo, y luego incluirlo en el export default
+```php
+import childComponent from './ChildComponent.vue'
+
+export default{
+  components:{
+    childComponent
+  }    
+````
+2.1 Luego debo incluír la etiqueta del componente hijo, y debo bindear la propiedad con el elemento quie tenga los datos que quiero pasarle al componente hijo:
+```php
+<template>
+
+    
+    <childComponent :nombre_prop="nombre_data"> </childComponent>
+
+
+</template>
+
+````
+
+Explicando el código de arriba, tenemos __nombre_prop__ que es la propiedad que definí en el componente hijo,  y a este le asigno __nombre_data__ que es la propiedad en elemento padre, que tiene que existir previamente dentro del objeto data.
+
+
+
+
+
+
+
 
