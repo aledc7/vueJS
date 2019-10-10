@@ -60,7 +60,7 @@ export default{
     childComponent
   }    
 ````
-2.1 Luego debo incluír la etiqueta del componente hijo, y debo bindear la propiedad con el elemento quie tenga los datos que quiero pasarle al componente hijo:
+2.1 Luego, primeramente debo incluír la etiqueta del componente hijo en el template, para que aparezca, y despues bindear la propiedad que quiera enviar, con el elemento quie tenga los datos que quiero pasarle al componente hijo:
 ```php
 <template>
 
@@ -72,7 +72,12 @@ export default{
 
 ````
 
-Explicando el código de arriba, tenemos __nombre_prop__ que es la propiedad que definí en el componente hijo,  y a este le asigno __nombre_data__ que es la propiedad en elemento padre, que tiene que existir previamente dentro del objeto data.
+En el ejemplo de arriba, tenemos __nombre_prop__ que es la propiedad que definí en el componente hijo (en el array de __props__,  y a este le asigno __nombre_data__ que es la propiedad en elemento padre, que tiene que existir previamente dentro del objeto data del componente padre.
+
+
+De esta manera ya se podrían enviar los datos del componente padre al componente hijo.
+
+
 
 
 
