@@ -11,12 +11,16 @@ La Comunicación entre componentes en vuejs puede ser de varias maneras:
 
 Cuando es desde un componente Padre a un Componente hijo, se hace a traves de __propiedades__  
 
-PADRE -> __PROPIEDAD__ -> HIJO
+PADRE :arrow_right: __PROPIEDAD__ :arrow_right: HIJO
 
 Cuando es desde un componente hijo hacia un componente padre, se hace a traves de __eventos__ 
 
-HIJO __EVENTO__ -> PADRE
+HIJO :arrow_right: __EVENTO__ :arrow_right: PADRE
 
+
+
+
+# Padre -> Hijo:
 
 En este caso tenemos como ejemplo un componente padre enviando información a un componente hijo:
 
@@ -80,6 +84,57 @@ En el ejemplo de arriba, tenemos __nombre_prop__ que es la propiedad que definí
 
 
 De esta manera ya se podrían enviar los datos del componente padre al componente hijo.
+
+
+________________________________________________________________________________________________________________________
+
+# Hijo -> Padre
+
+En este caso tenemos como ejemplo un componente __Hijo__ enviando información a un componente __Padre__:
+
+1. Primero, en el componente hijo, que en este caso será quien envíe la data, se debe definir un método quien será responsable de realizar el envío.  Luego dentro de este método se debe usar la funcion __$emit__ de vue: 
+```php
+methods:{
+    enviaralpadre(){
+      this.$emit('emitehijo', this.dato_a_enviar)
+    }
+  }
+````
+Analizando el ejemplo de arriba, primeramente se declara __this.$emit__, luego entre parentesis, se pasa primero el nombre del evento, y luego el dato que se quiere enviar. 
+El nombre del evento será el mismo que se deba usar luego en el componente padre para reibirlo, y el dato, debe ser el mismo declarado en el objeto data del componente hijo.
+
+2. Luego en el componente Padre, quien recibirá el data, son varios pasos, primeramente se debe bindiar en la etiqueta en donde esté invocado el hijo, en el template, e indicar el nombre del evento emitido con una __@__ seguida del nombre del evento, luego __=__ y el nombre de un método, que debe declararse en el componete padre.
+
+```php
+
+<child @emitehijo="recibePadre"> </child>
+
+````
+
+Tenemos entonces __@emitehijo__  que es el nombre que le puse al evento emisor en el componente hijo... podría haberle puesto cualquier nombre, claro.
+
+Luego tenemos __="recibePadre"__ que será un método que debo crear en el componente padre.
+Este método debe obligatoriamente pasársele una parámetro, esta será una variable, que tendrá la data desde el hijo, y se deberá ser asignada a algúna variable en el objeto __data__ del componente Padre. 
+  Entonces será necesario en el objeto data del componente padre, crear una variable para que reciba los datos enviados por el hijo.
+Veamos un ejemoplo del metodo __recibePadre__
+
+```php
+methods: {
+recibePadre(data_del_emit){
+      this.data_local_en_padre = data_del_emit
+    }
+         }
+````
+
+En el ejemplo de arriba, tenemos el método __recibePadre()__  que redive un parámetro... este parámetro es el que envía en el evento, y trae los datos del componente hijo.
+Luego dentro del metodo, a un objeto local que debe existir en la data del padre, se le asigna el parámetro recibido.
+
+De esta manera entonces logramos enviar data de un componente hijo a un componente padre.
+
+
+
+
+
 
 
 
