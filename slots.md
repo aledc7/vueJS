@@ -16,16 +16,20 @@ Con esta propiedad de Vue, es posible enviar todo tipo de HTML, modales enteros 
 <!-- Componente llamado 'child2Component' que reibirá los SLOTS del componente Padre -->
 <div>
 
-  <slot name="title">
+  <slot name="title">  </slot>
+  
+
+
+  <slot name="body">   </slot>
+    
+ 
+<!-- Optativamente en el compoonente hijo es posible poner elementos en caso de que el elemento padre no pase ningún elemento -->  
+  <slot name="otro_title">
     <!-- Esto es OPTATIVO!!  en caso de que el slot en el padre no exista, se mostrará este -->
     <h1>Titulo Original del Child en un Titulo H1</h1>
   </slot>
 
 
-  <slot name="body">
-    <!-- Esto es OPTATIVO!!  en caso de que el slot en el padre no tenga texto, se suará este -->
-    <p>Parrafo original del Child en el Body</p>
-  </slot>
 
 </div>
 
