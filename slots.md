@@ -45,15 +45,26 @@ Aqui el ejemplo del componente Padre:
 ```php
 <child2Component>
  <h1 slot="title"> Data pasada a través de un SLOT </h1>
+ 
   <p slot="body" >
     SLOT Lorem ipsum dolor sit, amet consectetur adipisicing elit.
     Assumenda aspernatur consectetur unde, tempore sed nesciunt,
     possimus eius sequi iste temporibus provident omnis neque odio deserunt
     mollitia perspiciatis totam voluptatum est!
   </p>
+  
+  <slot name="otro_title">
+    <h1> Esto es otro título </h1>
+  </slot>
+  
+  
 </child2Component>
 ````
-Observamos en el ejemplo de arriba, que las etiquetas slot estan dentro de las etiquetas child2Component, que son el componente hijo dentro del padre.
+Observamos en el ejemplo de arriba, que las etiquetas __slot__ estan dentro de las etiquetas __child2Component__, que son el componente hijo declarado dentro del padre.
+
+Este componente hijo __child2Component__, deberá estar importado y declarado en el componente padre, tal como se hace siempre en Vue para incluír un componente dentro de otro.   
+
+Eso es todo
 
 
 
