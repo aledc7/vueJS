@@ -9,7 +9,7 @@
 
 Este repositorio tiene todo el material relacionado con mi Cerficicación de VueJS realizada en Platzi.com.
 
-En este repositorio se pueden encontrar ejemplo de todas las pruncipales funciones de VueJS como son
+En este repositorio se pueden encontrar ejemplo de todas las principales funciones de VueJS   
 
 - [x] Vue Router
 - [x] VueX
