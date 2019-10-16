@@ -17,6 +17,8 @@ Dentro de este archivo, primero debo importar el todos los componentes a los que
 
 
 ```php
+# Archivo routes.js
+
 # importo todos los componentes que asignaré a las distintas rutas
 import LocalComponent from './LocalComponent.vue'
 import ChildComponent from './ChildComponent.vue'
@@ -34,7 +36,7 @@ const routes = [
   { path:'/event', component: EventBusComponent, name: 'event'}
 ]
 
-por último exporto el array creado arriba
+# luego exporto el array creado arriba
 export default routes
 
 ````
@@ -46,6 +48,9 @@ export default routes
 3. Una vez tenga creado el archivo __routes.js__, debemos importarlo y tambien registrarlo para su uso, dentro del archivo __/src/main.js__   
 
 ```php
+# archivo main.js
+
+
 # Importo vue router
 import VueRouter from 'vue-router'
 
@@ -69,4 +74,38 @@ new Vue({
   router,
 })
 ````
+
+4. Por último solo queda incluir en el componente principal la etiqueta __<router-view></router-view>__  de manera de usar estas rutas
+
+```php
+# archivo App.vue
+
+<template> 
+
+    # Incluyo un menú de navegación para recorrer las distintas rutas creadas.
+    <router-link to="/">Home</router-link> |
+    <router-link to="/local">Local</router-link> |
+    <router-link to="/child">Child</router-link> |
+    <router-link to="/child2">Child 2</router-link> |
+    <router-link to="/event">Event</router-link>
+
+# Estas etiquetas hacen que finalmente se pueda usar Vue Route
+<router-view> </router-view>
+
+</template>
+
+
+</script>
+
+</script>
+
+
+<style>
+
+</style>
+````
+
+De esta manera, cada vez que se necesite una nueva ruta para asignar a un nuevo componente, solo bastará con definirlp en el archivo de __rutas.js__ y crearle el __route-link__ correspondiente.   
+
+Eso es todo
 
