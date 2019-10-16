@@ -14,7 +14,9 @@ En este repositorio se pueden encontrar ejemplo de todas las pruncipales funcion
 - [x] Vue Router
 - [x] VueX
 - [x] Event-Bus
-- [x] Slots
-- [x] Directivas (v-if v-else v-show)
-- [x] [Comunicación entre Componentes](https://github.com/aledc7/vuejs/blob/master/comunicacion_componentes.md)  
+- [x] [Slots](https://github.com/aledc7/vuejs/blob/master/slots.md)
+- [x] [Eventos](https://github.com/aledc7/vuejs/tree/master/Eventos)
+- [x] [Computed](https://github.com/aledc7/vuejs/blob/master/computed_y_watcher.md)
+- [x] [Watcher](https://github.com/aledc7/vuejs/blob/master/computed_y_watcher.md)  
+- [x] [Comunicación entre Componentes](https://github.com/aledc7/vuejs/blob/master/comunicacion_componentes.md)    
 
