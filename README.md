@@ -13,7 +13,7 @@ En este repositorio se pueden encontrar ejemplo de todas las pruncipales funcion
 
 - [x] Vue Router
 - [x] VueX
-- [x] Event-Bus
+- [x] [Event-Bus](https://github.com/aledc7/vuejs/blob/master/event-bus.md)
 - [x] [Slots](https://github.com/aledc7/vuejs/blob/master/slots.md)
 - [x] [Eventos](https://github.com/aledc7/vuejs/tree/master/Eventos)
 - [x] [Computed](https://github.com/aledc7/vuejs/blob/master/computed_y_watcher.md)
