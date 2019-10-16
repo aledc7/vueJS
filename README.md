@@ -16,4 +16,5 @@ En este repositorio se pueden encontrar ejemplo de todas las pruncipales funcion
 - [x] Event-Bus
 - [x] Slots
 - [x] Directivas (v-if v-else v-show)
-- [x] Comunicación entre Componentes
+- [x] [Comunicación entre Componentes](https://github.com/aledc7/vuejs/blob/master/comunicacion_componentes.md)  
+
