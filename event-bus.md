@@ -5,7 +5,7 @@
 [![GitHub release](https://github.com/aledc7/Scrum-Certification/blob/master/recursos/release.svg)](https://aledc.com)
 [![Dependencies](https://github.com/aledc7/Scrum-Certification/blob/master/recursos/dependencias-none.svg)](https://aledc.com)
 
-Event Bus es una manera de enviar información entre componentes que no tienen relación, esto quere decir que no son ni padres ni hijos.
+Event Bus es una manera de enviar información entre componentes que no tienen relación, esto quere decir que no son ni padres ni hijos.  
  Event Bus no es mas que otra instancia de Vue, la cual puede emitir eventos y pasar data a traves de __$emit__ .  
  Luego en el componente en que se quiera recibir esta data se debera hacer uso de __$on__ .   
  De esta forma entonces es posible enviar informacion desde cualquier componente hacia cualquier componente.  
@@ -38,7 +38,7 @@ Vue.use(EventBus)
 
 3.  Luego, dentro del objeto que quiero que envíe información mediante event bus, debo emitir un evento, indicando la data que quiero enviar en este vento, puede ser una sola variable o todo un objeto, o array de objetos.
 
-## Ejemplo completo de un componente que emite la data de ingresada en un input:   
+## Ejemplo completo de un componente que emite la data ingresada en un input:   
 
 ```php
 
@@ -76,9 +76,9 @@ export default{
 
 4. Ahora solo resta usar __$on__ en el componente en el que quiera recibir y usar la data emitida por el componente emisor.
 
-El evento debe ser escuchado dentro de la función __created()__  y deberá tener el mismo nombre que se le puso en el elemento emisor (nombre-evento), y omo parámetro debe recibir la misma data que emite el componente emisor.  Luego esta data recibida debo asignarla a alguna variable existente en el objeto Data del receptor.
+El evento debe ser escuchado dentro de la función __created()__  y deberá tener el mismo nombre que se le puso en el elemento emisor (nombre-evento), y como parámetro debe recibir la misma data que emite el componente emisor.  Luego esta data recibida debo asignarla a alguna variable existente en el objeto Data del receptor.
 
-Finalmente la muestro en un parrafo, para comprobar que la estoy recibiendo correcgtamente.
+Finalmente la muestro en un parrafo, para comprobar que estoy recibiendo la data correctamente.
 
 ```php
 <template>
