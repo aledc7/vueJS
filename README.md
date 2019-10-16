@@ -7,4 +7,13 @@
 
 - [x] Ale DC
 
-Este repositorio tiene todo el material relacionado con mi Cerficicación de VueJS
+Este repositorio tiene todo el material relacionado con mi Cerficicación de VueJS realizada en Platzi.com.
+
+En este repositorio se pueden encontrar ejemplo de todas las pruncipales funciones de VueJS como son
+
+- [x] Vue Router
+- [x] VueX
+- [x] Event-Bus
+- [x] Slots
+- [x] Directivas (v-if v-else v-show)
+- [x] Comunicación entre Componentes
