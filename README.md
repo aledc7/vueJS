@@ -12,7 +12,7 @@ Este repositorio tiene todo el material relacionado con mi Cerficicación de Vue
 
 En este repositorio se pueden encontrar ejemplo de todas las principales funciones de VueJS   
 
-- [x] Vue Router
+- [x] [Vue Router](https://github.com/aledc7/vuejs/blob/master/vue-router.md)
 - [x] VueX
 - [x] [Event-Bus](https://github.com/aledc7/vuejs/blob/master/event-bus.md)
 - [x] [Slots](https://github.com/aledc7/vuejs/blob/master/slots.md)
