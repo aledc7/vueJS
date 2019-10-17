@@ -12,12 +12,12 @@ Este repositorio tiene todo el material relacionado con mi Cerficicación de Vue
 
 En este repositorio se pueden encontrar ejemplo de todas las principales funciones de VueJS   
 
-- [x] [Vue Router](https://github.com/aledc7/vuejs/blob/master/vue-router.md)
-- [x] VueX
-- [x] [Event-Bus](https://github.com/aledc7/vuejs/blob/master/event-bus.md)
-- [x] [Slots](https://github.com/aledc7/vuejs/blob/master/slots.md)
-- [x] [Eventos](https://github.com/aledc7/vuejs/tree/master/Eventos)
-- [x] [Computed](https://github.com/aledc7/vuejs/blob/master/computed_y_watcher.md)
-- [x] [Watcher](https://github.com/aledc7/vuejs/blob/master/computed_y_watcher.md)  
-- [x] [Comunicación entre Componentes](https://github.com/aledc7/vuejs/blob/master/comunicacion_componentes.md)    
+- [x] [Vue Router](https://github.com/aledc7/vuejs/blob/master/vue-router.md)  
+- [x] [VueX](https://github.com/aledc7/vuejs/blob/master/vuex.md)  
+- [x] [Event-Bus](https://github.com/aledc7/vuejs/blob/master/event-bus.md)  
+- [x] [Slots](https://github.com/aledc7/vuejs/blob/master/slots.md)  
+- [x] [Eventos](https://github.com/aledc7/vuejs/tree/master/Eventos)  
+- [x] [Computed](https://github.com/aledc7/vuejs/blob/master/computed_y_watcher.md)  
+- [x] [Watcher](https://github.com/aledc7/vuejs/blob/master/computed_y_watcher.md)   
+- [x] [Comunicación entre Componentes](https://github.com/aledc7/vuejs/blob/master/comunicacion_componentes.md)     
 
