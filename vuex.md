@@ -6,12 +6,12 @@
 [![Dependencies](https://github.com/aledc7/Scrum-Certification/blob/master/recursos/dependencias-none.svg)](https://aledc.com)
 
 
-Vuex es una librería oficial de Vue que permite manejar el estado de la app que estemos creando, de manera centralizada, esto significa que es posible aplicar un patron del tipo __FLEX__ o __REDUX__ .  
+__Vuex__ es una librería oficial de Vue que permite manejar el estado de la app que estemos creando, de manera centralizada, esto significa que es posible aplicar un patron del tipo __FLEX__ o __REDUX__ .  
 Vuex hace posible que toda la informacíon de la App pueda concentrarse en un mismo lugar, y que este lugar actúe como origen único de nuestra data, para que pueda ser accedida y utilizada desde cualquier componente.  
-Utilizar Vuex es recomendada para aplicaciones de mediana o gran escala que tengan mucha comunicación entre componentes, por lo tanto,  si la app es muy pequeña se puede usar cualquiera de los otros métodos para pasar información, como son __propiedades__, __eventos__, y __slots__.   
-En resumen, Vuex sirve para que todos los componentes (sin importar su gerarquía), puedan compartir información de una manera centralizada. 
+Utilizar __Vuex__ es recomendado cuando tenemos aplicaciones de __mediana o gran escala__ que tengan mucha comunicación entre componentes, por lo tanto si la app es muy pequeña no se recomienda vuex, y en cambio, se puede usar cualquiera de los otros métodos para pasar información, como son __propiedades__, __eventos__, y __slots__.   
+En resumen, Vuex sirve para que todos los componentes (sin importar su gerarquía), puedan compartir información de una manera centralizada.  
 Al tener un Store de información único (similar al patron Singleton), lo que se logra es que se puedan propagar los cámbios en todos los componentes que están haciendo uso de la Data de ese Store.  
-De esta manera, cada vez que la Data en este sSore cámbie, se renderizará en todos los componentes que usen esta misma Data.
+De esta manera, cada vez que la Data en este Sore cámbie, se renderizará en todos los Componentes que usen esta misma Data.  
 
 # Utilizando Vuex
 
@@ -82,9 +82,6 @@ import {mapState, mapMutations} from 'vuex'
 5. Ahora para poder usar tanto los métodos propios del componente como así también los métodos declarados en el store, necesito una caracteristica llamada __Object Spread Operator__ . Es una incorporación  de __ECMAScript__ bastante nueva, que permite esta funcionalidad, pero requiere de la instalación de un plugin:  __babel/preset-stage-3__  
 El Spread Operator se utiliza mediante tres puntos seguidos __...__ antes de un objeto, y en resumen entonces, permite combinar computes properties propias del componente, con computes properties propias del state de vuex.   
 
-
-
-
 ```php
 # Instalo este plugin para poder usar Object Spread Operator
 
@@ -103,13 +100,7 @@ npm install --save-dev @babel/preset-stage-3
 }
 ````
 
-
-
-
-
-4. Luego para acceder al store, en el componente que lo vaya a utilizar, dentro de __export default__ debo definir una __computed properties__ en la que invoco a la propiedad en el store que quiera utilizar:
-
-
+6. Luego para acceder al store, en el componente que lo vaya a utilizar, dentro de __export default__ debo definir una __computed properties__ en la que invoco a la propiedad en el store que quiera utilizar:
 
 
 ```php
