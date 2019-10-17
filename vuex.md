@@ -13,4 +13,122 @@ En resumen, Vuex sirve para que todos los componentes (sin importar su gerarquí
 Al tener un Store de información único (similar al patron Singleton), lo que se logra es que se puedan propagar los cámbios en todos los componentes que están haciendo uso de la Data de ese Store.  
 De esta manera, cada vez que la Data en este sSore cámbie, se renderizará en todos los componentes que usen esta misma Data.
 
+# Utilizando Vuex
+
+
+1.  Primeramente es necesario instalar __Vuex__ en nuestro proyecto:
+```php
+npm install -S vuex
+````
+
+2. Una vez instalado, debo crear el archivo __/src/store.js__ que será el componente que contendrá toda la data centralizada de la que hablé arriba.  
+
+Dentro de este archivo estará toda la lógicade vue y vuex para que se pueda utilizar:   
+
+```php
+# Archivo /src/store.js
+
+# Primero importo vue y vuex
+import Vue from 'vue'
+import Vuex from 'vuex'
+
+# Aca le indico a vue que utilice vuex
+Vue.use(Vuex)
+
+const store = new Vuex.Store({
+# El state en vuex viene a ser como el data en vue, todo lo que se encuentre aca es lo que se va a poder compartir en todos los componentes
+
+state: {
+  count: 0
+},
+
+# Mutations es el equivalente a Methods en vuex
+mutations: {
+  increment(state, payload = {}) {
+    state.count += payload.number || 1   },
+    decrement(state){
+      state.count--
+    }
+  }
+
+})
+
+# Exporto este archivo para poder importarlo en el archivo main.js
+export default store
+````
+
+3. Luego debo importar este archivo __store.js__ dentro del arcjivo __src/main.js__  e indicarle para que la instancia de vue pueda utilizarlo, insertandole el __store__ 
+
+```php
+# Archivo main.js
+
+# Acá lo importo
+import store from './store'
+
+# Aca inyecto el store dentro de la instancia de Vue
+new Vue({
+  el: '#app',
+  render: h => h(App),
+  store
+})
+````
+
+4. Luego debo hacer uso de ___mapState__ por lo que debo importarlo en el componente que vaya a utilizar el store
+
+```php
+import {mapState, mapMutations} from 'vuex'
+````
+
+5. Ahora para poder usar tanto los métodos propios del componente como así también los métodos declarados en el store, necesito una caracteristica llamada __Object Spread Operator__ . Es una incorporación  de __ECMAScript__ bastante nueva, que permite esta funcionalidad, pero requiere de la instalación de un plugin:  __babel/preset-stage-3__  
+El Spread Operator se utiliza mediante tres puntos seguidos __...__ antes de un objeto, y en resumen entonces, permite combinar computes properties propias del componente, con computes properties propias del state de vuex.   
+
+
+
+
+```php
+# Instalo este plugin para poder usar Object Spread Operator
+
+npm install --save-dev @babel/preset-stage-3
+````
+
+5.1 Una vez instalado debo agregar incluir el plugin en el archivo __.babelrc__
+```php
+# Archivo .babelrc
+
+{
+  "presets": [
+    ["env", { "modules": false }],
+    "stage-3"
+  ]
+}
+````
+
+
+
+
+
+4. Luego para acceder al store, en el componente que lo vaya a utilizar, dentro de __export default__ debo definir una __computed properties__ en la que invoco a la propiedad en el store que quiera utilizar:
+
+
+
+
+```php
+# Componente VUE que vaya a utilizar el store
+
+export default{
+  computed:{
+  # Acá llamo a count dentro del store
+  ...mapState(['count'])
+  
+  # Metodo del componente
+  otroMetodo() {
+    console.com("este metodo es propio del componente")
+      }
+ }
+  }
+````
+
+
+
+
 
