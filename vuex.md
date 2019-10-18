@@ -83,7 +83,7 @@ import {mapState, mapMutations} from 'vuex'
 El Spread Operator se utiliza mediante tres puntos seguidos __...__ antes de un objeto, y en resumen entonces, permite combinar computes properties propias del componente, con computes properties propias del state de vuex.   
 
 ```php
-# Instalo este plugin para poder usar Object Spread Operator
+# Instalo este plugin para poder usar Object Spread Operator  "...metodo     ...estado"
 
 npm install --save-dev @babel/preset-stage-3
 ````
@@ -108,16 +108,43 @@ npm install --save-dev @babel/preset-stage-3
 
 export default{
   computed:{
-  # Acá llamo a count dentro del store
+  # Acá mediante el "Spread Operator" bindeo con el elemento count dentro del archivo store.js 
   ...mapState(['count'])
   
   # Metodo del componente
+  
+  # Este es un método propio del componente
   otroMetodo() {
     console.com("este metodo es propio del componente")
       }
+      
+  # aca mediante Spread Operator  Uso los metodos 'increment' y 'decrement' que estan declarados en el archivo store.js, y los puedo usar como si fuesen metodos propios del componente.
+  
+...mapMutations(['increment','decrement'])
+  
+  
  }
   }
 ````
+
+
+De esta manera entonces es que puedo usar tanto la __Data__ como los __Métodos__ de un __Store__, en este caso llamado store.js,  que será accesible para cualquier componente de nuestra aplicación.
+
+Cuando algun componente cambie esa data, entonces ese cámbio se reflejará reacticamente en todos los componentes que también se encuentren usando esta data.
+
+
+y esto es todo Vuex.
+
+
+Consejo:  Este tema es algo digamos bastante avanzado....por lo cual mi recomendación es practirar estos pasos y releerlo varias veces, ya que son varios conceptos los que se emplean, y puede que no se entienda a la primera.
+
+
+Saludos
+
+- [x] Ale Dc
+
+
+
 
 
 
