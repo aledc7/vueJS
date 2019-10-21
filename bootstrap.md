@@ -41,8 +41,15 @@ eso sería todo, ahora puedo usar todas las clases de bootstrap con mi App de Vu
 Para probar si Bootstrap está funcionando simplemente agregar cualquiera de las clases de bootstrap a cualquiera de nuestros componentes:   
 ```php
 
-# Agrego la clase de Bootstrap display-1  a una etiqueta h1
-<h1 class="display-1">Projects</h1>
+# Agrego botones tipicos de bootstrap
+
+<div>
+  <b-button>Button</b-button>
+  <b-button variant="danger">Button</b-button>
+  <b-button variant="success">Button</b-button>
+  <b-button variant="outline-primary">Button</b-button>
+</div>
+
 ````
 
 Si todo fue bien, al guardar los cámbios deberia verse el estilo propio de la clase de bootstrap.
