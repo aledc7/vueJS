@@ -5,7 +5,9 @@
 [![GitHub release](https://github.com/aledc7/Scrum-Certification/blob/master/recursos/release.svg)](https://aledc.com)
 [![Dependencies](https://github.com/aledc7/Scrum-Certification/blob/master/recursos/dependencias-none.svg)](https://aledc.com)
 
-# Incluyendo Bootstrap a nuestra App
+# Incluyendo [Bootstrap-Vue](https://bootstrap-vue.js.org/) a nuestra App
+
+Con más de 40 complementos disponibles y más de 80 componentes de interfaz de usuario personalizados, __BootstrapVue__ proporciona una de las implementaciones más completas del sistema de cuadrícula y componentes Bootstrap v4.3 disponible para Vue.js v2.6 
 
 
 1. Primero instalar bootstrap en la carpeta de nuestro proyecto, mediante npm:   
