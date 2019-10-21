@@ -19,5 +19,6 @@ En este repositorio se pueden encontrar ejemplo de todas las principales funcion
 - [x] [Eventos](https://github.com/aledc7/vuejs/tree/master/Eventos)  
 - [x] [Computed](https://github.com/aledc7/vuejs/blob/master/computed_y_watcher.md)  
 - [x] [Watcher](https://github.com/aledc7/vuejs/blob/master/computed_y_watcher.md)   
-- [x] [Comunicación entre Componentes](https://github.com/aledc7/vuejs/blob/master/comunicacion_componentes.md)     
+- [x] [Comunicación entre Componentes](https://github.com/aledc7/vuejs/blob/master/comunicacion_componentes.md)
+- [x] [Incluir Bootstrap](https://github.com/aledc7/vuejs/blob/master/bootstrap.md)
 
