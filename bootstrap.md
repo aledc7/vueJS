@@ -10,9 +10,26 @@
 Con más de 40 complementos disponibles y más de 80 componentes de interfaz de usuario personalizados, __BootstrapVue__ proporciona una de las implementaciones más completas del sistema de cuadrícula y componentes Bootstrap v4.3 disponible para Vue.js v2.6 
 
 
-1. Primero instalar bootstrap en la carpeta de nuestro proyecto, mediante npm:   
+1. Primero instalar bootstrap en la carpeta de nuestro proyecto, mediante npm.  Existen dos formas, a traves de un plugin, la cual es mas recomendada ya que se configura todo solo,  y a traves de NPM.  Se muestran las dos opciones:  
 ```php
+
+# OPCIÓN 1: Instalar a traves del plugin  (recomendado)   
+vue add bootstrap-vue
+
+# OPCIÓN 2: instalar mediante npm
 npm install vue bootstrap-vue bootstrap
+
+# El resultado debería ser similar al signiente:
+_______________________________________________________________________________________________
++ vue-cli-plugin-bootstrap-vue@0.4.0
+added 1 package from 1 contributor and audited 9980 packages in 4.632s
+found 0 vulnerabilities
+
+✔  Successfully installed plugin: vue-cli-plugin-bootstrap-vue
+
+? Use babel/polyfill? Yes
+_______________________________________________________________________________________________
+
 ````
 
 2. Luego hacer un import de bootstrap en el archivo js principal, en mi caso estoy usando __main.js__
