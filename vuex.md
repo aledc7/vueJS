@@ -154,6 +154,25 @@ mutations: {
 Los nombres de estos metodos dentro de las mutations sera la manera en que se invoquen desde el componente, this.$store.commit('suma'), en este caso, invoco al metodo 'suma' de la mutation en el store.js.    
 
 
+Luego en el componente .vue en donde quiera usar estos metodos (mutations) puedo hacerlo mediante spread operator.  
+Dentro de __methods:__  quitar los metodos propios del componente, y poner en su lugar el spread operator con las __mapMutations__ con los nombres de los metodos que queremos usar.
+
+```php
+methods: {
+
+        // aca uso los metodos (mutationsI  suma y resta que se encuentran en el archivo store.js
+      ...mapMutations(['suma','resta']),
+      
+      
+      // estos son metodos comunes, propios del componente vue
+      suma10(){
+        this.$store.commit('suma',{number:10})
+      },
+      resta10(){
+        this.$store.commit('resta',{number:10})
+      }
+````
+
 
 
 De esta manera entonces es que puedo usar tanto la __Data__ como los __Métodos__ de un __Store__, en este caso llamado store.js,  que será accesible para cualquier componente de nuestra aplicación.
