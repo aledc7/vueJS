@@ -100,7 +100,8 @@ npm install --save-dev @babel/preset-stage-3
 }
 ````
 
-6. Luego para acceder al store, en el componente que lo vaya a utilizar, dentro de __export default__ debo definir una __computed properties__ en la que invoco a la propiedad en el store que quiera utilizar:
+6. Ahora para poder usar Vuex, existen dos posibilidades, la primera es emitiendo eventos, haciendo uso de __this.$store.commit__ , y la segunda es no declarar metodos en el componente vue, y en cambio declararlos en el store.js y usarlos bindeandolos mediante el spread operator veamos el primer caso haciendo uso de __this.$store.commit__   
+
 
 
 ```php
@@ -111,21 +112,48 @@ export default{
   # Acá mediante el "Spread Operator" bindeo con el elemento count dentro del archivo store.js 
   ...mapState(['count'])
   
-  # Metodo del componente
+  # Metodo propio del componente
   
-  # Este es un método propio del componente
-  otroMetodo() {
-    console.com("este metodo es propio del componente")
-      }
       
-  # aca mediante Spread Operator  Uso los metodos 'increment' y 'decrement' que estan declarados en el archivo store.js, y los puedo usar como si fuesen metodos propios del componente.
-  
-...mapMutations(['increment','decrement'])
-  
-  
- }
-  }
+ methods: {
+ 
+      # aca hago commit para bindear, en este caso 'suma' es el nombre de la mutation que vive en en el archivo store.js
+      increment(){
+        this.$store.commit('suma')
+      },
+      
+      
+      # Lo mismo que arriba pero con la mutation resta
+      decrement(){       
+        this.$store.commit('resta')
+      }
+    }     
 ````
+
+7. Ahora veamos la otra posibilidad, que consiste en NO declarar metodos propios dentro del componente, y en vez de esto, declararlos en el store, dentro del objeto __mutations{ }__  Aqui un ejemolo 
+
+
+Primero creo los metodos dentro del __store.js__ :
+```php
+
+mutations: {
+  suma(state, payload = {}) {
+      // el payload significa que le puedo pasar un objeto con mas propiedades ademas del state
+     state.count += payload.number || 1   },
+     
+     resta(state, payload = {}){
+     state.count-= payload.number || 1
+      }
+    }
+
+})
+
+  export default store  
+````
+
+Los nombres de estos metodos dentro de las mutations sera la manera en que se invoquen desde el componente, this.$store.commit('suma'), en este caso, invoco al metodo 'suma' de la mutation en el store.js.    
+
+
 
 
 De esta manera entonces es que puedo usar tanto la __Data__ como los __Métodos__ de un __Store__, en este caso llamado store.js,  que será accesible para cualquier componente de nuestra aplicación.
