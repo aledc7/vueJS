@@ -1,4 +1,4 @@
-![vueJS](https://raw.githubusercontent.com/aledc7/vuejs/master/bootstrap-vue.svg)   
+![vueJS](https://raw.githubusercontent.com/aledc7/vuejs/master/vuelogo.png)   
 
 
 
