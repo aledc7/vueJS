@@ -199,11 +199,13 @@ getters:{
   }
 ```
 
-Una vez que tengo el getter declarado en el store.js, solo resta llamarlo desde el componente que lo quiera utulizar, de la siguiente manera:
+Una vez que tengo el getter declarado en el store.js, solo resta llamarlo desde el componente que lo quiera utulizar, dentro de __computed__ de la siguiente manera:
 
 ```php
 # Archivo .vue en donde quiera usar el getter
 
+
+computed: {
 
 usandoGetter(){
         return this.$store.getters.countDoble
