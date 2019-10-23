@@ -100,7 +100,7 @@ npm install --save-dev @babel/preset-stage-3
 }
 ````
 
-6. Ahora para poder usar Vuex, existen dos posibilidades, la primera es emitiendo eventos, haciendo uso de __this.$store.commit__ , y la segunda es no declarar metodos en el componente vue, y en cambio declararlos en el store.js y usarlos bindeandolos mediante el spread operator veamos el primer caso haciendo uso de __this.$store.commit__   
+6. Ahora para poder usar Vuex, existen dos posibilidades, la primera es emitiendo commits, haciendo uso de __this.$store.commit__ , y la segunda es no declarar metodos en el componente vue, y en cambio declararlos en el store.js y usarlos bindeandolos mediante el spread operator veamos el primer caso haciendo uso de __this.$store.commit__   
 
 
 
@@ -130,7 +130,8 @@ export default{
     }     
 ````
 
-7. Ahora veamos la otra posibilidad, que consiste en NO declarar metodos propios dentro del componente, y en vez de esto, declararlos en el store, dentro del objeto __mutations{ }__  Aqui un ejemolo 
+7. Ahora veamos la otra posibilidad, que consiste en NO declarar metodos propios dentro del componente, y en vez de esto, declararlos en el store, dentro del objeto __mutations{ }__ y reutilizarlos en el componente vue que yo quiera.   
+ Aqui un ejemolo:   
 
 
 Primero creo los metodos dentro del __store.js__ :
@@ -160,7 +161,8 @@ Dentro de __methods:__  quitar los metodos propios del componente, y poner en su
 ```php
 methods: {
 
-        // aca uso los metodos (mutationsI  suma y resta que se encuentran en el archivo store.js
+       // aca uso los metodos (que son mutations)  suma y resta que se encuentran en el archivo store.js
+       
       ...mapMutations(['suma','resta']),
       
       
@@ -175,7 +177,7 @@ methods: {
 
 
 
-De esta manera entonces es que puedo usar tanto la __Data__ como los __Métodos__ de un __Store__, en este caso llamado store.js,  que será accesible para cualquier componente de nuestra aplicación.
+De esta manera entonces es que puedo usar simultaneamente los metodos pripios de un componente, como asi tambien __Métodos__ de un __Store__ de Vuex, en este caso llamado store.js,  que será accesible para cualquier componente de nuestra aplicación.
 
 Cuando algun componente cambie esa data, entonces ese cámbio se reflejará reacticamente en todos los componentes que también se encuentren usando esta data.
 
