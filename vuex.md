@@ -73,7 +73,7 @@ new Vue({
 })
 ````
 
-4. Luego debo hacer uso de ___mapState__ por lo que debo importarlo en el componente que vaya a utilizar el store
+4. Luego, en el componente que vaya a utilizar el store, debo hacer uso de ___mapState__ por lo que debo importarlo 
 
 ```php
 import {mapState, mapMutations} from 'vuex'
