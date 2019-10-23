@@ -182,6 +182,45 @@ De esta manera entonces es que puedo usar simultaneamente los metodos pripios de
 Cuando algun componente cambie esa data, entonces ese cámbio se reflejará reacticamente en todos los componentes que también se encuentren usando esta data.
 
 
+
+### Getters
+
+Los Getters son una caracteristica que permiten acceder a las Propiedades de Vuex de manera personalizada.  Supongamos que tengo la propiedad __count__ de Vuex (que es con la que vengo trabajando), y quiero multiplicarla por 2.  Aqui normalmente podría trabajar esto en el componente que vaya a usar esta propiedad de vuex,  pero esto trae el problema de que al tener varios comoponentes, debería repetir el codigo necesario para multiplicar esta propiedad, en cada componente en donde la vaya a utilizar.  Pero mediante los Getters, puedo realizar esta operación para multiplicar dentro de un getter, y de esta manera, todos los componentes tendrían acceso a este, sin necesidad de repetir el código en cada componente.
+
+Creando un Getter dentro del __store.js__ 
+
+```php
+const store = new Vuex.Store({
+
+getters:{
+    countDoble(count){
+      return state.count * 2
+    }
+  }
+```
+
+Una vez que tengo el getter declarado en el store.js, solo resta llamarlo desde el componente que lo quiera utulizar, de la siguiente manera:
+
+```php
+# Archivo .vue en donde quiera usar el getter
+
+
+usandoGetter(){
+        return this.$store.getters.countDoble
+      }
+      
+# Luego puedo por ejemplo renderizar el contenido 
+
+
+<h1> {{ usandoGetter }} </h1>
+
+````
+
+
+
+
+
+
 y esto es todo Vuex.
 
 
